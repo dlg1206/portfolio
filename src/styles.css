@@ -22,6 +22,15 @@
 }
 
 
+.blue-gradient {
+  display: block;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, var(--background), var(--background-1));
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 body {
   display: block;
   margin: 0;

@@ -1,0 +1,5 @@
+.blue-gradient {
+  background: linear-gradient(
+    to bottom, var(--background) 50%,
+    var(--background-1)), 100%;
+}
