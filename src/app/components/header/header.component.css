@@ -1,0 +1,68 @@
+/*
+Menu bar styling
+ */
+.menubar {
+  background-color: var(--background);
+  /* vertically align centers */
+  display: flex;
+  align-items: center;
+
+  /* top/bottom left/right */
+  padding: .5em 2em;
+
+  /* bottom seperator */
+  border-bottom-color: var(--windsurf-accent);
+  border-bottom-width: .4em;
+  border-bottom-style: solid;
+}
+
+.menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: white;
+  font-size: 1.125em;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: var(--lt-blue-accent);
+}
+
+
+/*
+Name Styling
+ */
+.name {
+  font-weight: 600;
+  font-size: 2.25em;
+}
+
+/* disable hyperlink decoration */
+.name.no-style-line {
+  color: inherit;
+  text-decoration: none;
+}
+
+/**
+Resume Button
+ */
+.resume-btn {
+  padding: 0.25em 1em;
+  background-color: var(--orange-accent);
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.resume-btn:hover {
+  background-color: var(--beige-secondary);
+}
