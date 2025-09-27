@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { MenubarModule } from 'primeng/menubar';
+import {Component} from '@angular/core';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   imports: [
-    MenubarModule
+    RouterLink
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
@@ -12,12 +12,16 @@ import { MenubarModule } from 'primeng/menubar';
 export class HeaderComponent {
   items: any[];
 
+  /**
+   * Create new nav bar with routes to over pages
+   */
   constructor() {
     this.items = [
-      { label: 'About', icon: 'pi pi-home', routerLink: '/about' },
-      { label: 'Education', icon: 'pi pi-chart-line', routerLink: '/education' },
-      { label: 'Experience', icon: 'pi pi-sign-in', routerLink: '/experience' },
-      { label: 'Publications', icon: 'pi pi-sign-in', routerLink: '/projects' }
+      {label: 'About', routerLink: '/about'},
+      {label: 'Education', routerLink: '/education'},
+      {label: 'Experience', routerLink: '/experience'},
+      {label: 'Publications', routerLink: '/publications'},
+      {label: 'Projects', routerLink: '/projects'}
     ];
   }
 
