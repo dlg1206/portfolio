@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +15,7 @@ export class HeaderComponent {
   /**
    * Create new nav bar with routes to over pages
    */
-  constructor() {
+  constructor(public router: Router) {
     this.items = [
       {label: 'About', routerLink: '/about'},
       {label: 'Education', routerLink: '/education'},
@@ -23,5 +23,13 @@ export class HeaderComponent {
       {label: 'Publications', routerLink: '/publications'},
       {label: 'Projects', routerLink: '/projects'}
     ];
+  }
+
+
+  /**
+   * Check if this the homepage
+   */
+  get isHomePage(): boolean {
+    return this.router.url === '/';
   }
 }

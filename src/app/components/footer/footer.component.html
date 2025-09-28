@@ -2,20 +2,20 @@
   <div>
     <div class="menu-items">
       @for (item of items; track item.label) {
-          <!--social link-->
-          <a [href]="item.url" target="_blank" rel="noopener" class="menu-item">
-            <img
-              [ngSrc]="item.icon"
-              width="20"
-              height="20"
-              [alt]="item.label" class="icon"
-              decoding="async"
-              loading="lazy"
-            />
-            <span>{{ item.label }}</span>
-          </a>
+        <!--social link-->
+        <a [href]="item.url" target="_blank" rel="noopener" class="menu-item">
+          <img
+            [ngSrc]="item.icon"
+            width="20"
+            height="20"
+            [alt]="item.label" class="icon"
+            decoding="async"
+            loading="lazy"
+          />
+          <span>{{ item.label }}</span>
+        </a>
       }
     </div>
-    <p class="footer-text">© {{ currentYear }} First Last. All rights reserved.</p>
+    <p class="footer-text">© {{ currentYear }} Derek Garcia. All rights reserved.</p>
   </div>
 </footer>

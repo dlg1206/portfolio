@@ -21,6 +21,17 @@
   margin-left: auto;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; /* spacing between columns */
+}
+
+.column {
+  flex: 1; /* equal width */
+  padding: 1rem;
+}
+
 
 .blue-gradient {
   display: block;
@@ -31,13 +42,25 @@
   overflow-x: hidden;
 }
 
-body {
-  display: block;
+.content {
   margin: 0;
-  padding: 0;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+body {
   height: 100%;
-  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   font-family: var(--font-base), sans-serif;
   color: white;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

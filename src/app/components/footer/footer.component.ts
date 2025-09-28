@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {SocialLinks} from '../../shared/globals';
 import {NgOptimizedImage} from '@angular/common';
 

@@ -3,3 +3,9 @@
     to bottom, var(--background) 50%,
     var(--background-1)), 100%;
 }
+
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+}

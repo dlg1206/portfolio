@@ -16,6 +16,11 @@ Menu bar styling
   border-bottom-style: solid;
 }
 
+/* Disable bottom border on home page */
+.header.no-border {
+  border-bottom: none;
+}
+
 .menu-items {
   list-style: none;
   margin: 0;
