@@ -1,7 +1,7 @@
 /*
 Menu bar styling
  */
-.menubar {
+.header {
   background-color: var(--background);
   /* vertically align centers */
   display: flex;

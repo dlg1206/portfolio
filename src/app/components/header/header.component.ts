@@ -24,5 +24,4 @@ export class HeaderComponent {
       {label: 'Projects', routerLink: '/projects'}
     ];
   }
-
 }
