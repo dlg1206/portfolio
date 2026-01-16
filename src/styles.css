@@ -24,12 +24,14 @@
 .row {
   display: flex;
   flex-direction: row;
-  gap: 1rem; /* spacing between columns */
+  gap: 1em; /* spacing between columns */
+  align-items: center;
 }
 
 .column {
   flex: 1; /* equal width */
-  padding: 1rem;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
 
