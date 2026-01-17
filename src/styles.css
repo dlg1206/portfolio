@@ -25,6 +25,10 @@
   margin-left: auto;
 }
 
+.left-align {
+  margin-right: auto;
+}
+
 .horiz-align {
   align-items: center
 }
@@ -48,8 +52,13 @@
 }
 
 .content {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding: 0 5rem; /*left and right spacing*/
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+  /*hyphens: auto;*/
 }
 
 html, body {
@@ -60,4 +69,9 @@ html, body {
 
   font-family: var(--font-base), sans-serif;
   color: white;
+}
+
+
+div {
+  /*border: red solid 1px*/
 }

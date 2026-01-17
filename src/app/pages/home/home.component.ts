@@ -4,6 +4,7 @@ import {NgOptimizedImage, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [
     NgOptimizedImage,
     NgStyle
@@ -23,7 +24,12 @@ export class HomeComponent {
     this.bannerImage = "img/landscape.png"
 
     this.images = {
-      welcome: {image: 'garcia/welcome.png', alt: 'three quarters headshot of Derek Garcia'}
+      welcome: {image: 'garcia/welcome.png', alt: 'portrait picture of Derek Garcia'},
+      cyberSymposium: {
+        image: 'img/manoa-csec-symposium-2025.jpg',
+        alt: 'Derek with RIT alumni standing and smiling at the camera',
+        source: 'https://www.hawaii.edu/news/2025/03/03/uh-cybersecurity-symposium'
+      }
     }
 
     this.icons = {
@@ -57,10 +63,12 @@ interface Icons {
 interface ImageItem {
   image: string;
   alt: string;
+  source?: string;
 }
 
 interface Images {
   welcome: ImageItem
+  cyberSymposium: ImageItem
 }
 
 

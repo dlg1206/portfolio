@@ -6,3 +6,33 @@
   background-position: center; /* center the image */
   background-repeat: no-repeat;
 }
+
+
+.card {
+  position: relative;
+  background: var(--yellow-accent);
+  width: 564px;
+  height: 317px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /*padding-right: .5rem;*/
+  overflow: visible; /* IMPORTANT */
+}
+
+.card-image {
+  position: absolute;
+  /*display: inline-block;*/
+  left: -4rem; /* pushes image past the LEFT edge */
+  margin-bottom: 1rem;
+  /*top: 40px;*/
+}
+
+.card-text {
+  margin-top: 20rem; /* push text below absolute image */
+  margin-left: 5rem;
+  color: var(--background);
+  font-style: italic;
+}
+
+
+
