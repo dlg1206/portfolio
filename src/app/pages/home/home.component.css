@@ -1,11 +1,8 @@
-.blue-gradient {
-  background: linear-gradient(
-    to bottom, var(--background) 50%,
-    var(--background-1)), 100%;
-}
+.full-cover {
+  width: 100vw;
+  margin: 0;
 
-
-.icon {
-  width: 1.5em;
-  height: 1.5em;
+  background-size: cover; /* fill container, crop if needed */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
 }

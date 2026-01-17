@@ -1,85 +1,79 @@
 <!-- home.component.html -->
-
 <!--intro row-->
-<div class="container">
-  <!--picture-->
-  <div class="column">
+<div class="full-cover" [ngStyle]="{'background-image': 'url(' + bannerImage + ')' }">
 
-  </div>
-  <!--welcome-->
-  <div class="column">
-    <!--greeting-->
-    <div class="column">
-      <p style="font-size: 3.75em; font-weight: lighter; margin-bottom: 0">Hello there 👋<br>I'm <span
-        style="color: var(--orange-accent)">Derek Garcia</span></p>
-      <p style="font-size: 2.5em; font-weight: lighter; margin: 0">Researcher and Software Developer</p>
+  <div class="content flex-container horiz-align row">
+
+    <!--picture-->
+    <img style="margin-left: 5rem; margin-bottom: 0"
+         [ngSrc]="images.welcome.image"
+         [alt]="images.welcome.alt"
+         width="404"
+         height="600"
+    />
+
+    <!--welcome-->
+    <div class="column" style="margin-left: 10rem">
+      <!--greeting-->
+      <div class="column">
+        <p style="font-size: 4.75em; font-weight: lighter; margin: 0">Hello there 👋<br>I'm <span
+          style="color: var(--orange-accent)">Derek Garcia</span></p>
+        <p style="font-size: 3.5em; font-weight: lighter;margin: 0">Researcher and Software Developer</p>
+      </div>
+
+      <!--icon row-->
+      <div class="flex-container horiz-align row" style="gap: 1.5rem;">
+        <!--LinkedIn Icon-->
+        <a [href]="icons.linkedin.url" target="_blank" rel="noopener noreferrer">
+          <img [ngSrc]="icons.linkedin.icon"
+               [alt]="icons.linkedin.label"
+               width="45"
+               height="45"
+          />
+        </a>
+        <!--Github Icon-->
+        <a [href]="icons.github.url" target="_blank" rel="noopener noreferrer">
+          <img [ngSrc]="icons.github.icon"
+               [alt]="icons.github.label"
+               width="50"
+               height="50"
+          />
+        </a>
+        <!--ORCHID Icon-->
+        <a [href]="icons.orcid.url" target="_blank" rel="noopener noreferrer">
+          <img [ngSrc]="icons.orcid.icon"
+               [alt]="icons.orcid.label"
+               width="45"
+               height="45"
+          />
+        </a>
+        <!--Google Scholar Icon-->
+        <a [href]="icons.googleScholar.url" target="_blank" rel="noopener noreferrer">
+          <img [ngSrc]="icons.googleScholar.icon"
+               [alt]="icons.googleScholar.label"
+               width="50"
+               height="50"
+          />
+        </a>
+        <!--Email Icon-->
+        <a [href]="icons.email.url" target="_blank" rel="noopener noreferrer">
+          <img [ngSrc]="icons.email.icon"
+               [alt]="icons.email.label"
+               width="50"
+               height="50"
+          />
+        </a>
+        <!--Calculator Icon-->
+        <a [href]="icons.cemetech.url" target="_blank" rel="noopener noreferrer">
+          <img [ngSrc]="icons.cemetech.icon"
+               [alt]="icons.cemetech.label"
+               width="50"
+               height="50"
+          />
+        </a>
+      </div>
     </div>
-
-    <!--  <p style="font-size: 1.5em;">-->
-    <!--    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus, quam at scelerisque semper, lectus purus-->
-    <!--    pretium sapien, ac elementum diam tortor sed mauris. Donec ac commodo mi. In quis magna felis.-->
-    <!--  </p>-->
-
-    <!--icon row-->
-    <div class="row" style="gap: 1.5rem; padding-left: 1rem">
-
-      <!--LinkedIn Icon-->
-      <a [href]="icons.linkedin.url" target="_blank" rel="noopener noreferrer">
-        <img [ngSrc]="icons.linkedin.icon"
-             [alt]="icons.linkedin.label"
-             width="35"
-             height="35"
-        />
-      </a>
-
-      <!--Github Icon-->
-      <a [href]="icons.github.url" target="_blank" rel="noopener noreferrer">
-        <img [ngSrc]="icons.github.icon"
-             [alt]="icons.github.label"
-             width="40"
-             height="40"
-        />
-      </a>
-
-      <!--ORCHID Icon-->
-      <a [href]="icons.orcid.url" target="_blank" rel="noopener noreferrer">
-        <img [ngSrc]="icons.orcid.icon"
-             [alt]="icons.orcid.label"
-             width="35"
-             height="35"
-        />
-      </a>
-
-      <!--Google Scholar Icon-->
-      <a [href]="icons.googleScholar.url" target="_blank" rel="noopener noreferrer">
-        <img [ngSrc]="icons.googleScholar.icon"
-             [alt]="icons.googleScholar.label"
-             width="40"
-             height="40"
-        />
-      </a>
-
-      <!--Email Icon-->
-      <a [href]="icons.email.url" target="_blank" rel="noopener noreferrer">
-        <img [ngSrc]="icons.email.icon"
-             [alt]="icons.email.label"
-             width="40"
-             height="40"
-        />
-      </a>
-
-      <!--Calculator Icon-->
-      <a [href]="icons.cemetech.url" target="_blank" rel="noopener noreferrer">
-        <img [ngSrc]="icons.cemetech.icon"
-             [alt]="icons.cemetech.label"
-             width="40"
-             height="40"
-        />
-      </a>
-    </div>
-
   </div>
-
-
 </div>
+
 

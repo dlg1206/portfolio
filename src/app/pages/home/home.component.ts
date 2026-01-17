@@ -1,22 +1,31 @@
 import {Component} from '@angular/core';
 import {SocialLinks} from '../../shared/globals';
-import {NgOptimizedImage} from '@angular/common';
+import {NgOptimizedImage, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-home',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    NgStyle
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  bannerImage: string
+  images: Images
   icons: Icons
 
   /**
    * Create new nav bar with routes to external pages
    */
   constructor() {
+    this.bannerImage = "img/landscape.png"
+
+    this.images = {
+      welcome: {image: 'garcia/welcome.png', alt: 'three quarters headshot of Derek Garcia'}
+    }
+
     this.icons = {
       github: {label: 'GitHub', url: SocialLinks.github, icon: 'icons/github.svg'},
       linkedin: {label: 'LinkedIn', url: SocialLinks.linkedin, icon: 'icons/linkedin.svg'},
@@ -44,4 +53,15 @@ interface Icons {
   email: IconItem;
   cemetech: IconItem;
 }
+
+interface ImageItem {
+  image: string;
+  alt: string;
+}
+
+interface Images {
+  welcome: ImageItem
+}
+
+
 
