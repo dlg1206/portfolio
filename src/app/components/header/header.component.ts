@@ -1,12 +1,15 @@
 import {Component} from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
+import {SimpleButtonComponent} from '../../shared/components/simple-button/simple-button.component';
 
 @Component({
   selector: 'app-header',
   imports: [
-    RouterLink
+    RouterLink,
+    SimpleButtonComponent
   ],
   templateUrl: './header.component.html',
+  standalone: true,
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
