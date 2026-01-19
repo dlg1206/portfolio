@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {SocialLinks} from '../../shared/globals';
+import {DEFAULT_ICONS} from '../../shared/globals';
 import {NgOptimizedImage} from '@angular/common';
+import {ImageItem} from '../../shared/models/image-item';
 
 @Component({
   selector: 'app-footer',
@@ -8,10 +9,11 @@ import {NgOptimizedImage} from '@angular/common';
     NgOptimizedImage
   ],
   templateUrl: './footer.component.html',
+  standalone: true,
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  items: any[];
+  items: ImageItem[];
   currentYear: number = new Date().getFullYear();
 
 
@@ -20,11 +22,11 @@ export class FooterComponent {
    */
   constructor() {
     this.items = [
-      {label: 'GitHub', url: SocialLinks.github, icon: 'icons/github.svg'},
-      {label: 'LinkedIn', url: SocialLinks.linkedin, icon: 'icons/linkedin.svg'},
-      {label: 'Google Scholar', url: SocialLinks.google_scholar, icon: 'icons/google_scholar.svg'},
-      {label: 'Email', url: SocialLinks.email, icon: 'icons/email.svg'},
-      {label: 'ORCID', url: SocialLinks.orcid, icon: 'icons/orcid.svg'}
-    ];
+      DEFAULT_ICONS.github,
+      DEFAULT_ICONS.linkedin,
+      DEFAULT_ICONS.googleScholar,
+      DEFAULT_ICONS.email,
+      DEFAULT_ICONS.orcid
+    ]
   }
 }

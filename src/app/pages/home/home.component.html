@@ -1,15 +1,16 @@
 <!-- home.component.html -->
 
 <!--intro row-->
-<div class="full-cover" [ngStyle]="{'background-image': 'url(' + bannerImage + ')' }">
+<!--Welcome banner-->
+<div [ngStyle]="{'background-image': 'url(' + bannerImage + ')' }" class="full-cover">
   <div class="content flex-container horiz-align row">
 
     <!--picture-->
-    <img style="margin-left: 5rem; margin-bottom: 0"
+    <img [alt]="images.welcome.alt"
          [ngSrc]="images.welcome.image"
-         [alt]="images.welcome.alt"
-         width="404"
          height="600"
+         style="margin-left: 5rem; margin-bottom: 0"
+         width="404"
     />
 
     <!--welcome-->
@@ -24,57 +25,58 @@
       <!--icon row-->
       <div class="flex-container horiz-align row" style="gap: 1.5rem;">
         <!--LinkedIn Icon-->
-        <a [href]="icons.linkedin.url" target="_blank" rel="noopener noreferrer">
-          <img [ngSrc]="icons.linkedin.icon"
-               [alt]="icons.linkedin.label"
-               width="45"
+        <a [href]="DEFAULT_ICONS.linkedin.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.linkedin.alt"
+               [ngSrc]="DEFAULT_ICONS.linkedin.image"
                height="45"
+               width="45"
           />
         </a>
         <!--Github Icon-->
-        <a [href]="icons.github.url" target="_blank" rel="noopener noreferrer">
-          <img [ngSrc]="icons.github.icon"
-               [alt]="icons.github.label"
-               width="50"
+        <a [href]="DEFAULT_ICONS.github.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.github.alt"
+               [ngSrc]="DEFAULT_ICONS.github.image"
                height="50"
+               width="50"
           />
         </a>
         <!--ORCHID Icon-->
-        <a [href]="icons.orcid.url" target="_blank" rel="noopener noreferrer">
-          <img [ngSrc]="icons.orcid.icon"
-               [alt]="icons.orcid.label"
-               width="45"
+        <a [href]="DEFAULT_ICONS.orcid.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.orcid.alt"
+               [ngSrc]="DEFAULT_ICONS.orcid.image"
                height="45"
+               width="45"
           />
         </a>
         <!--Google Scholar Icon-->
-        <a [href]="icons.googleScholar.url" target="_blank" rel="noopener noreferrer">
-          <img [ngSrc]="icons.googleScholar.icon"
-               [alt]="icons.googleScholar.label"
-               width="50"
+        <a [href]="DEFAULT_ICONS.googleScholar.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.googleScholar.alt"
+               [ngSrc]="DEFAULT_ICONS.googleScholar.image"
                height="50"
+               width="50"
           />
         </a>
         <!--Email Icon-->
-        <a [href]="icons.email.url" target="_blank" rel="noopener noreferrer">
-          <img [ngSrc]="icons.email.icon"
-               [alt]="icons.email.label"
-               width="50"
+        <a [href]="DEFAULT_ICONS.email.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.email.image"
+               [ngSrc]="DEFAULT_ICONS.email.image"
                height="50"
+               width="50"
           />
         </a>
         <!--Calculator Icon-->
-        <a [href]="icons.cemetech.url" target="_blank" rel="noopener noreferrer">
-          <img [ngSrc]="icons.cemetech.icon"
-               [alt]="icons.cemetech.label"
-               width="50"
+        <a [href]="DEFAULT_ICONS.cemetech.image" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.cemetech.alt"
+               [ngSrc]="DEFAULT_ICONS.cemetech.image"
                height="50"
+               width="50"
           />
         </a>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="blue-gradient content flex-container" style="padding-top: 5rem; padding-bottom: 3rem">
   <!--about-->
@@ -93,11 +95,11 @@
     <!--picture-->
     <div class="column" style="flex: 1">
       <div class="right-align card">
-        <a class="card-image" [href]="images.cyberSymposium.source" target="_blank" rel="noopener noreferrer">
-          <img [ngSrc]="images.cyberSymposium.image"
-               [alt]="images.cyberSymposium.alt"
-               width="564"
+        <a [href]="images.cyberSymposium.source" class="card-image" rel="noopener noreferrer" target="_blank">
+          <img [alt]="images.cyberSymposium.alt"
+               [ngSrc]="images.cyberSymposium.image"
                height="317"
+               width="564"
           />
         </a>
         <!--        <img class="card-image"-->
