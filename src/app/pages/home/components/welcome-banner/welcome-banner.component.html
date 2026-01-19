@@ -1,0 +1,74 @@
+<div [ngStyle]="{'background-image': 'url(' + images.banner.image + ')' }" class="full-cover">
+  <div class="content flex-container horiz-align row">
+
+    <!--picture-->
+    <img [alt]="images.welcome.alt"
+         [ngSrc]="images.welcome.image"
+         height="600"
+         style="margin-left: 5rem; margin-bottom: 0"
+         width="404"
+    />
+
+    <!--welcome-->
+    <div class="column" style="margin-left: 10rem">
+      <!--greeting-->
+      <div class="column">
+        <p style="font-size: 4.75em; font-weight: lighter; margin: 0">Hello there 👋<br>I'm <span
+          style="color: var(--orange-accent)">Derek Garcia</span></p>
+        <p style="font-size: 3.5em; font-weight: lighter;margin: 0">Researcher and Software Developer</p>
+      </div>
+
+      <!--icon row-->
+      <div class="flex-container horiz-align row" style="gap: 1.5rem;">
+        <!--LinkedIn Icon-->
+        <a [href]="DEFAULT_ICONS.linkedin.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.linkedin.alt"
+               [ngSrc]="DEFAULT_ICONS.linkedin.image"
+               height="45"
+               width="45"
+          />
+        </a>
+        <!--Github Icon-->
+        <a [href]="DEFAULT_ICONS.github.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.github.alt"
+               [ngSrc]="DEFAULT_ICONS.github.image"
+               height="50"
+               width="50"
+          />
+        </a>
+        <!--ORCHID Icon-->
+        <a [href]="DEFAULT_ICONS.orcid.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.orcid.alt"
+               [ngSrc]="DEFAULT_ICONS.orcid.image"
+               height="45"
+               width="45"
+          />
+        </a>
+        <!--Google Scholar Icon-->
+        <a [href]="DEFAULT_ICONS.googleScholar.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.googleScholar.alt"
+               [ngSrc]="DEFAULT_ICONS.googleScholar.image"
+               height="50"
+               width="50"
+          />
+        </a>
+        <!--Email Icon-->
+        <a [href]="DEFAULT_ICONS.email.href" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.email.image"
+               [ngSrc]="DEFAULT_ICONS.email.image"
+               height="50"
+               width="50"
+          />
+        </a>
+        <!--Calculator Icon-->
+        <a [href]="DEFAULT_ICONS.cemetech.image" rel="noopener noreferrer" target="_blank">
+          <img [alt]="DEFAULT_ICONS.cemetech.alt"
+               [ngSrc]="DEFAULT_ICONS.cemetech.image"
+               height="50"
+               width="50"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

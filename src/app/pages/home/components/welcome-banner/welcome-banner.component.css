@@ -1,0 +1,8 @@
+.full-cover {
+  width: 100vw;
+  margin: 0;
+
+  background-size: cover; /* fill container, crop if needed */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
+}
