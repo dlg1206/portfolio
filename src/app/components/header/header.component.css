@@ -59,8 +59,3 @@ Name Styling
   font-size: 2.25em;
 }
 
-/* disable hyperlink decoration */
-.name.no-style-line {
-  color: inherit;
-  text-decoration: none;
-}

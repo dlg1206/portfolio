@@ -1,23 +1,26 @@
+<!--background image-->
 <div [ngStyle]="{'background-image': 'url(' + images.banner.image + ')' }" class="full-cover">
-  <div class="page-content flex-row align-center" style="padding-top: 5rem">
+  <!--overlay-->
+  <div class="page-content flex-row" style="padding-top: 5rem">
 
     <!--picture-->
     <img [alt]="images.welcome.alt"
          [ngSrc]="images.welcome.image"
          height="600"
-         style="margin-left: 5rem;"
+         style="margin-left: 5rem; margin-top: auto;"
          width="404"
     />
 
     <!--welcome-->
-    <div class="welcome-container" style="margin-left: 10rem">
+    <div class="flex-column justify-center" style="margin-left: 10rem">
       <!--greeting-->
       <h1 #heroTitle class="hero-title hidden">
         Hello there 👋
         <br>
-        I'm <span style="color: var(--orange-accent)">Derek Garcia</span>
+        <span class="no-break">I'm <span style="color: var(--orange-accent)">Derek Garcia</span></span>
       </h1>
-      <h2 #heroSubtitle class="hero-subtitle mb-1 hidden">Researcher and Software Developer</h2>
+      <h2 #heroSubtitle class="hero-subtitle mb-1 hidden">Researcher and <span
+        class="no-break">Software Developer</span></h2>
 
       <!--icon row-->
       <div class="flex-row align-center" style="gap: 1.5rem;">

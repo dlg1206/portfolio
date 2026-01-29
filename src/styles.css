@@ -105,6 +105,10 @@ Text formatting
   color: inherit
 }
 
+.no-break {
+  white-space: nowrap;
+}
+
 .text-md{
   font-size: 1.5rem;
 }

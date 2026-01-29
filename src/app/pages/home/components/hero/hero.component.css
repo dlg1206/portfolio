@@ -2,9 +2,13 @@
   width: 100vw;
   margin: 0;
 
-  background-size: cover; /* fill container, crop if needed */
-  background-position: center; /* center the image */
+  background-size: cover; /* cover container without stretching */
+  background-position: center; /* keep focus centered */
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .hero-title {
