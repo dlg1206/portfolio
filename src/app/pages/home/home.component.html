@@ -7,7 +7,7 @@
 <!--use padding instead of margin so blue gradient fills page-->
 <div class="page-content blue-gradient" style="padding-top: 5rem; padding-bottom: 3rem">
   <!--about row-->
-  <div class="flex-row align-center mb-5">
+  <div #aboutRow class="hidden flex-row align-center mb-5">
     <!--about excerpt-->
     <div style="flex: 2; margin-right: 7rem">
       <h3 class="section-header mb-1">About</h3>
@@ -29,7 +29,7 @@
   </div>
 
   <!--info tiles-->
-  <div class="info-card-grid mb-5">
+  <div #infoRow class="hidden info-card-grid mb-5">
     @for (infoTile of infoTiles; track infoTile.title) {
       <app-info-tile
         [title]="infoTile.title"
@@ -42,7 +42,7 @@
   </div>
 
   <!--Learn more section-->
-  <div class="flex-row" style="gap: 5rem">
+  <div #learnMoreRow class="hidden flex-row" style="gap: 5rem">
     <!--Learn more excerpt-->
     <div style="width: 60%">
       <h3 class="section-header mb-1">Want to Learn More?</h3>

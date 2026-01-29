@@ -35,6 +35,18 @@
   font-weight: 300;
 }
 
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* visible state */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .social-icon {
   transition-delay: 1.5s;

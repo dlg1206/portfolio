@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {ImageItem} from '../../shared/models/image-item';
 import {HeroComponent} from './components/hero/hero.component';
@@ -17,9 +17,14 @@ import {HOME_CONTENT} from './content';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   images: Images
   infoTiles: InfoTile[]
+
+  // Grab a reference to the DOM elements
+  @ViewChild('aboutRow', {static: true}) aboutRow!: ElementRef;
+  @ViewChild('infoRow', {static: true}) infoRow!: ElementRef;
+  @ViewChild('learnMoreRow', {static: true}) learnMoreRow!: ElementRef;
 
   protected readonly ICONS = ICONS;
   protected readonly HOME_CONTENT = HOME_CONTENT;
@@ -38,6 +43,29 @@ export class HomeComponent {
       {title: 'Experience', icon: ICONS.code, content: HOME_CONTENT.experience, routerLink: '/experience'},
       {title: 'Research', icon: ICONS.documents, content: HOME_CONTENT.research, routerLink: '/publications', width: 45}
     ]
+  }
+
+
+  ngAfterViewInit() {
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            // animate once
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      // wait until 30% loaded
+      {threshold: 0.4}
+    );
+
+    // observe elements
+    observer.observe(this.aboutRow.nativeElement);
+    observer.observe(this.infoRow.nativeElement);
+    observer.observe(this.learnMoreRow.nativeElement);
   }
 }
 
