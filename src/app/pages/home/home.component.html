@@ -7,25 +7,28 @@
 <!--use padding instead of margin so blue gradient fills page-->
 <div class="page-content blue-gradient" style="padding-top: 5rem; padding-bottom: 3rem">
   <!--about row-->
-  <div #aboutRow class="hidden flex-row align-center mb-5">
+  <div #aboutRow class="hidden flex-row align-center mb-5" style="gap: 5rem; min-width: 600px;">
     <!--about excerpt-->
-    <div style="flex: 2; margin-right: 7rem">
+    <div style="width: 60%; min-width: 600px;">
       <h3 class="section-header mb-1">About</h3>
       <p class="text-md justify-text">{{ HOME_CONTENT.aboutMe }}</p>
     </div>
 
     <!--picture background-->
-    <div class="card">
+    <div class="group-background" style="min-width: 540px;">
       <!--picture-->
-      <a [href]="images.cyberSymposium.source" class="card-image" rel="noopener noreferrer" target="_blank">
+      <a [href]="images.cyberSymposium.source" rel="noopener noreferrer" target="_blank">
         <img [alt]="images.cyberSymposium.alt"
              [ngSrc]="images.cyberSymposium.image"
              height="360"
+             style="margin-bottom: 0.5rem"
              width="540"
         />
       </a>
-      <p class="card-text">RIT Alum at the UH Cybersecurity Symposium</p>
+      <p class="group-text">RIT Alum at the UH Cybersecurity Symposium</p>
     </div>
+
+
   </div>
 
   <!--info tiles-->

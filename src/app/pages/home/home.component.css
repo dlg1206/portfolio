@@ -1,24 +1,17 @@
-.card {
-  position: relative;
-  background: var(--yellow-accent);
-  width: 540px;
-  height: 360px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  overflow: visible; /* IMPORTANT */
+.group-background {
+  padding: 2rem 2rem 1rem 0;
+  background: linear-gradient(
+    to right,
+    transparent 0%, /* empty before fill */ transparent 10%, /* keep empty up to 30% */ var(--yellow-accent) 10%, /* fill starts at 30% */ var(--yellow-accent) 100% /* fill to end */
+  );
 }
 
-.card-image {
-  position: absolute;
-  left: -3rem; /* pushes image past the LEFT edge */
-  margin-bottom: 1rem;
-}
 
-.card-text {
-  margin-top: 22.8rem; /* push text below absolute image */
-  padding-left: 5rem;
+.group-text {
   color: var(--background);
   font-style: italic;
+  margin: 0;
+  padding-left: 6rem;
 }
 
 .info-card-grid {
