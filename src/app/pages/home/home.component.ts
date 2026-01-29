@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {ImageItem} from '../../shared/models/image-item';
-import {WelcomeBannerComponent} from './components/welcome-banner/welcome-banner.component';
+import {HeroComponent} from './components/hero/hero.component';
 import {ICONS} from '../../shared/globals';
 import {InfoTileComponent} from './components/info-tile/info-tile.component';
 import {HOME_CONTENT} from './content';
@@ -11,7 +11,7 @@ import {HOME_CONTENT} from './content';
   standalone: true,
   imports: [
     NgOptimizedImage,
-    WelcomeBannerComponent,
+    HeroComponent,
     InfoTileComponent
   ],
   templateUrl: './home.component.html',

@@ -38,7 +38,8 @@ export class InfoTileComponent implements AfterViewInit {
         threshold: 0.2, // triggers when 20% visible
       }
     );
-    // Stop observing after the animation runs once - prevent repeat fade in
+
+    // Start observing the card
     observer.observe(this.card.nativeElement);
   }
 }

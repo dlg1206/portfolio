@@ -14,18 +14,40 @@
   font-weight: 300;
 }
 
+/* Stagger delays */
+.hero-title.visible {
+  transition-delay: 0.2s;
+}
+
 .hero-subtitle {
   font-size: 3.5rem;
   line-height: 1.3;
-  margin: 0;
+  margin-top: 0;
   font-weight: 300;
+}
+
+.hero-subtitle.visible {
+  transition-delay: .8s;
 }
 
 
 .social-icon img {
+  transition-delay: 1.5s;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .social-icon:hover img {
   transform: translateY(-4px) scale(1.1);
+}
+
+/*animation*/
+.hidden {
+  opacity: 0;
+  transform: translateY(20px); /* slight slide up */
+  transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
