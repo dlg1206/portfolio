@@ -25,8 +25,8 @@ export class HeroComponent implements AfterViewInit {
 
   constructor() {
     this.images = {
-      banner: {image: 'img/landscape.png', alt: 'landscape of Hudson River from the top of Mt. Beacon, New York'},
-      welcome: {image: 'garcia/welcome.png', alt: 'portrait picture of Derek Garcia'},
+      banner: {image: 'img/landscape.png', alt: 'Overlook of mountain range and town in Hawai\'i'},
+      welcome: {image: 'garcia/welcome.png', alt: 'Portrait picture of Derek Garcia'},
     }
 
     this.socialIcons = [
