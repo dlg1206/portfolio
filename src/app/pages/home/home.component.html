@@ -4,44 +4,59 @@
 <!--Welcome banner-->
 <app-welcome-banner></app-welcome-banner>
 
-<div class="blue-gradient content flex-container" style="padding-top: 5rem; padding-bottom: 3rem">
-  <!--about-->
-  <div class="flex-container horiz-align row">
+<div class="blue-gradient content" style="padding-top: 5rem; padding-bottom: 3rem">
+  <!--about row-->
+  <div class="flex-container bottom-spaced horiz-align row">
+    <!--about excerpt-->
     <div class="column" style="flex: 2; margin-right: 7rem">
       <p style="font-size: 3em; text-decoration: underline; margin-bottom: .25rem">About</p>
-      <p class="justify" style="font-size: 1.5em;">I pride myself on completing tasks efficiently and in a timely
-        manner, by using creative and flexible thinking. I am able to find unique solutions to accomplish any goal that
-        I am given, through the use of my knowledge of project-based management and coding expertise. I am able to work
-        effectively with colleagues, as well as lead a group to collective success by engaging in feedback, and
-        challenging new processes. With this, I look forward to putting my abilities to use in the workplace, while
-        continuing to develop new skills.
-      </p>
+      <p class="justify" style="font-size: 1.5em;">{{ HOME_CONTENT.aboutMe }}</p>
     </div>
-
     <!--picture-->
     <div class="column" style="flex: 1">
       <div class="right-align card">
         <a [href]="images.cyberSymposium.source" class="card-image" rel="noopener noreferrer" target="_blank">
           <img [alt]="images.cyberSymposium.alt"
                [ngSrc]="images.cyberSymposium.image"
-               height="317"
-               width="564"
+               height="360"
+               width="540"
           />
         </a>
-        <!--        <img class="card-image"-->
-        <!--             [ngSrc]="images.cyberSymposium.image"-->
-        <!--             [alt]="images.cyberSymposium.alt"-->
-        <!--             width="564"-->
-        <!--             height="317"-->
-        <!--        />-->
         <p class="card-text">RIT Alum at the UH Cybersecurity Symposium</p>
 
       </div>
     </div>
-
-
   </div>
 
+  <!--info tiles-->
+  <div class="info-card-grid">
+    <app-info-tile
+      [content]=HOME_CONTENT.education
+      [icon]=ICONS.scholar
+      [title]="'Education'"
+      [routerLink]="'/education'"
+    >
+    </app-info-tile>
+
+    <app-info-tile
+      [content]="HOME_CONTENT.experience"
+      [icon]=ICONS.code
+      [title]="'Experience'"
+      [routerLink]="'/experience'"
+    >
+    </app-info-tile>
+
+    <app-info-tile
+      [content]="HOME_CONTENT.research"
+      [icon]=ICONS.documents
+      [title]="'Research'"
+      [width]="45"
+      [routerLink]="'/publications'"
+    >
+    </app-info-tile>
+
+  </div>
 </div>
+
 
 

@@ -22,6 +22,7 @@
 }
 
 .pad-lg {
-  padding: 1rem 2rem;
-  border-radius: 13px;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-size: 1.125rem;
 }

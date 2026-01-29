@@ -1,0 +1,21 @@
+<div class="info-card">
+  <!--Title-->
+  <div class="flex-container horiz-align row" style="margin-bottom: .8rem">
+    <img [alt]="icon.alt"
+         [height]="height"
+         [ngSrc]="icon.image"
+         [width]="width"
+         class="column"
+    />
+    <h1 class="column" style="margin: 0">{{ title }}</h1>
+  </div>
+
+  <!--content-->
+  <div class="card-content" style="margin-bottom: .8rem">
+    <p class="justify" style="margin: .5rem 0"> {{ content }} </p>
+  </div>
+
+  <!--learn more-->
+  <app-simple-button [content]="'Learn More'" [padding]="'lg'" [routerLink]="routerLink"></app-simple-button>
+
+</div>

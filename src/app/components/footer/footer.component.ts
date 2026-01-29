@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DEFAULT_ICONS} from '../../shared/globals';
+import {ICONS} from '../../shared/globals';
 import {NgOptimizedImage} from '@angular/common';
 import {ImageItem} from '../../shared/models/image-item';
 
@@ -18,15 +18,15 @@ export class FooterComponent {
 
 
   /**
-   * Create new nav bar with routes to external pages
+   * Create footer with routes to external pages
    */
   constructor() {
     this.items = [
-      DEFAULT_ICONS.github,
-      DEFAULT_ICONS.linkedin,
-      DEFAULT_ICONS.googleScholar,
-      DEFAULT_ICONS.email,
-      DEFAULT_ICONS.orcid
+      ICONS.github,
+      ICONS.linkedin,
+      ICONS.googleScholar,
+      ICONS.email,
+      ICONS.orcid
     ]
   }
 }

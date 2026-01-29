@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NgOptimizedImage, NgStyle} from '@angular/common';
 import {ImageItem} from '../../../../shared/models/image-item';
-import {DEFAULT_ICONS} from '../../../../shared/globals';
+import {ICONS} from '../../../../shared/globals';
 
 @Component({
   selector: 'app-welcome-banner',
@@ -16,7 +16,7 @@ import {DEFAULT_ICONS} from '../../../../shared/globals';
 export class WelcomeBannerComponent {
 
   images: Images
-  protected readonly DEFAULT_ICONS = DEFAULT_ICONS;
+  protected readonly DEFAULT_ICONS = ICONS;
 
   constructor() {
     this.images = {

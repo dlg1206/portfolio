@@ -22,11 +22,11 @@
 }
 
 .right-align {
-  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .left-align {
-  margin-right: auto;
+  justify-content: flex-start;
 }
 
 .horiz-align {
@@ -39,12 +39,15 @@
 
 .row {
   flex-direction: row;
-  gap: 1em; /* spacing between columns */
+  gap: 1rem;
 }
 
 .column {
   flex-direction: column; /* stack children vertically */
-  margin-bottom: 1em;
+}
+
+.bottom-spaced{
+  margin-bottom: 5rem;
 }
 
 .blue-gradient {
@@ -58,7 +61,6 @@
 .justify {
   text-align: justify;
   text-justify: inter-word;
-  /*hyphens: auto;*/
 }
 
 html, body {
@@ -72,6 +74,6 @@ html, body {
 }
 
 
-div {
+div,img {
   /*border: red solid 1px*/
 }

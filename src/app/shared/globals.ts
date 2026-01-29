@@ -1,4 +1,4 @@
-import {Icons} from './models/image-item';
+import {ImageItem} from './models/image-item';
 
 export const SocialLinks = {
   github: 'https://github.com/dlg1206',
@@ -9,8 +9,20 @@ export const SocialLinks = {
   cemetech: 'https://www.cemetech.net/users/TI_84_Coder'
 };
 
-/** Default set of icons for the application */
-export const DEFAULT_ICONS: Icons = {
+
+/** Collection of icons, keyed by icon name */
+export type IconName =
+  'github'
+  | 'linkedin'
+  | 'googleScholar'
+  | 'orcid'
+  | 'email'
+  | 'cemetech'
+  | 'scholar'
+  | 'code'
+  | 'documents';
+export type Icons = Record<IconName, ImageItem>;
+export const ICONS: Icons = {
   github: {
     alt: 'GitHub',
     image: 'icons/github.svg',
@@ -40,5 +52,17 @@ export const DEFAULT_ICONS: Icons = {
     alt: 'Calculator',
     image: 'icons/calculator.svg',
     href: SocialLinks.cemetech
-  }
+  },
+  scholar: {
+    alt: 'scholar',
+    image: 'icons/scholar.svg'
+  },
+  code: {
+    alt: 'code',
+    image: 'icons/code.svg'
+  },
+  documents: {
+    alt: 'documents',
+    image: 'icons/documents.svg'
+  },
 };

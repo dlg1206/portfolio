@@ -12,7 +12,3 @@ export interface ImageItem {
   source?: string;
   href?: string;
 }
-
-/** Collection of icons, keyed by icon name */
-export type IconName = 'github' | 'linkedin' | 'googleScholar' | 'orcid' | 'email' | 'cemetech';
-export type Icons = Record<IconName, ImageItem>;
