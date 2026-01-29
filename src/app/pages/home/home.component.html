@@ -4,59 +4,56 @@
 <!--Welcome banner-->
 <app-welcome-banner></app-welcome-banner>
 
-<div class="blue-gradient content" style="padding-top: 5rem; padding-bottom: 3rem">
+<!--use padding instead of margin so blue gradient fills page-->
+<div class="page-content blue-gradient" style="padding-top: 5rem; padding-bottom: 3rem">
   <!--about row-->
-  <div class="flex-container bottom-spaced horiz-align row">
+  <div class="flex-row align-center mb-3">
     <!--about excerpt-->
-    <div class="column" style="flex: 2; margin-right: 7rem">
-      <p style="font-size: 3em; text-decoration: underline; margin-bottom: .25rem">About</p>
-      <p class="justify" style="font-size: 1.5em;">{{ HOME_CONTENT.aboutMe }}</p>
+    <div style="flex: 2; margin-right: 7rem">
+      <h3 class="section-header mb-1">About</h3>
+      <p class="text-md justify-text">{{ HOME_CONTENT.aboutMe }}</p>
     </div>
-    <!--picture-->
-    <div class="column" style="flex: 1">
-      <div class="right-align card">
-        <a [href]="images.cyberSymposium.source" class="card-image" rel="noopener noreferrer" target="_blank">
-          <img [alt]="images.cyberSymposium.alt"
-               [ngSrc]="images.cyberSymposium.image"
-               height="360"
-               width="540"
-          />
-        </a>
-        <p class="card-text">RIT Alum at the UH Cybersecurity Symposium</p>
 
-      </div>
+    <!--picture background-->
+    <div class="card">
+      <!--picture-->
+      <a [href]="images.cyberSymposium.source" class="card-image" rel="noopener noreferrer" target="_blank">
+        <img [alt]="images.cyberSymposium.alt"
+             [ngSrc]="images.cyberSymposium.image"
+             height="360"
+             width="540"
+        />
+      </a>
+      <p class="card-text">RIT Alum at the UH Cybersecurity Symposium</p>
     </div>
   </div>
 
   <!--info tiles-->
-  <div class="info-card-grid">
+  <div class="info-card-grid mb-5">
     <app-info-tile
       [content]=HOME_CONTENT.education
       [icon]=ICONS.scholar
-      [title]="'Education'"
       [routerLink]="'/education'"
+      [title]="'Education'"
     >
     </app-info-tile>
 
     <app-info-tile
       [content]="HOME_CONTENT.experience"
       [icon]=ICONS.code
-      [title]="'Experience'"
       [routerLink]="'/experience'"
+      [title]="'Experience'"
     >
     </app-info-tile>
 
     <app-info-tile
       [content]="HOME_CONTENT.research"
       [icon]=ICONS.documents
+      [routerLink]="'/publications'"
       [title]="'Research'"
       [width]="45"
-      [routerLink]="'/publications'"
     >
     </app-info-tile>
-
   </div>
 </div>
-
-
 

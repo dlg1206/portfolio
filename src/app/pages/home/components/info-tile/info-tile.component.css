@@ -22,6 +22,10 @@
   flex-grow: 1;
 }
 
+.info-header {
+  font-size: 2rem;
+}
+
 
 /* visible state */
 .info-card.fade-in {

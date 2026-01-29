@@ -13,7 +13,7 @@ import {SimpleButtonComponent} from '../../shared/components/simple-button/simpl
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  items: any[];
+  items: NavItem[];
 
   /**
    * Create new nav bar with routes to over pages
@@ -35,4 +35,10 @@ export class HeaderComponent {
   get isHomePage(): boolean {
     return this.router.url === '/';
   }
+}
+
+
+interface NavItem {
+  label: string
+  routerLink: string
 }

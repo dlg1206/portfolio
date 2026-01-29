@@ -1,31 +1,32 @@
 <div [ngStyle]="{'background-image': 'url(' + images.banner.image + ')' }" class="full-cover">
-  <div class="content flex-container horiz-align row">
+  <div class="page-content flex-row align-center" style="padding-top: 5rem">
 
     <!--picture-->
     <img [alt]="images.welcome.alt"
          [ngSrc]="images.welcome.image"
          height="600"
-         style="margin-left: 5rem; margin-bottom: 0"
+         style="margin-left: 5rem;"
          width="404"
     />
 
     <!--welcome-->
-    <div class="column" style="margin-left: 10rem">
+    <div style="margin-left: 10rem">
       <!--greeting-->
-      <div class="column" style="margin-bottom: 1em;">
-        <p style="font-size: 4.75em; font-weight: lighter; margin: 0">Hello there 👋<br>I'm <span
-          style="color: var(--orange-accent)">Derek Garcia</span></p>
-        <p style="font-size: 3.5em; font-weight: lighter;margin: 0">Researcher and Software Developer</p>
-      </div>
+      <h1 class="hero-title">
+        Hello there 👋
+        <br>
+        I'm <span style="color: var(--orange-accent)">Derek Garcia</span>
+      </h1>
+      <h2 class="hero-subtitle mb-1">Researcher and Software Developer</h2>
 
       <!--icon row-->
-      <div class="flex-container horiz-align row" style="gap: 1.5rem;">
+      <div class="flex-row align-center" style="gap: 1.5rem;">
         <!--LinkedIn Icon-->
         <a [href]="DEFAULT_ICONS.linkedin.href" class="social-icon" rel="noopener noreferrer" target="_blank">
           <img [alt]="DEFAULT_ICONS.linkedin.alt"
                [ngSrc]="DEFAULT_ICONS.linkedin.image"
-               height="45"
-               width="45"
+               height="50"
+               width="50"
           />
         </a>
         <!--Github Icon-->
@@ -40,8 +41,8 @@
         <a [href]="DEFAULT_ICONS.orcid.href" class="social-icon" rel="noopener noreferrer" target="_blank">
           <img [alt]="DEFAULT_ICONS.orcid.alt"
                [ngSrc]="DEFAULT_ICONS.orcid.image"
-               height="45"
-               width="45"
+               height="50"
+               width="50"
           />
         </a>
         <!--Google Scholar Icon-->
@@ -56,16 +57,16 @@
         <a [href]="DEFAULT_ICONS.email.href" class="social-icon" rel="noopener noreferrer" target="_blank">
           <img [alt]="DEFAULT_ICONS.email.image"
                [ngSrc]="DEFAULT_ICONS.email.image"
-               height="50"
-               width="50"
+               height="45"
+               width="56"
           />
         </a>
         <!--Calculator Icon-->
         <a [href]="DEFAULT_ICONS.cemetech.image" class="social-icon" rel="noopener noreferrer" target="_blank">
           <img [alt]="DEFAULT_ICONS.cemetech.alt"
                [ngSrc]="DEFAULT_ICONS.cemetech.image"
-               height="50"
-               width="50"
+               height="45"
+               width="36"
           />
         </a>
       </div>
