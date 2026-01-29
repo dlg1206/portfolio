@@ -30,30 +30,15 @@
 
   <!--info tiles-->
   <div class="info-card-grid mb-5">
-    <app-info-tile
-      [content]=HOME_CONTENT.education
-      [icon]=ICONS.scholar
-      [routerLink]="'/education'"
-      [title]="'Education'"
-    >
-    </app-info-tile>
-
-    <app-info-tile
-      [content]="HOME_CONTENT.experience"
-      [icon]=ICONS.code
-      [routerLink]="'/experience'"
-      [title]="'Experience'"
-    >
-    </app-info-tile>
-
-    <app-info-tile
-      [content]="HOME_CONTENT.research"
-      [icon]=ICONS.documents
-      [routerLink]="'/publications'"
-      [title]="'Research'"
-      [width]="45"
-    >
-    </app-info-tile>
+    @for (infoTile of infoTiles; track infoTile.title) {
+      <app-info-tile
+        [title]="infoTile.title"
+        [icon]="infoTile.icon"
+        [content]="infoTile.content"
+        [routerLink]="infoTile.routerLink"
+        [width]="infoTile.width ?? 60"
+      ></app-info-tile>
+    }
   </div>
 </div>
 

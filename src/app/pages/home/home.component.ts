@@ -19,6 +19,7 @@ import {HOME_CONTENT} from './content';
 })
 export class HomeComponent {
   images: Images
+  infoTiles: InfoTile[]
 
   protected readonly ICONS = ICONS;
   protected readonly HOME_CONTENT = HOME_CONTENT;
@@ -31,12 +32,26 @@ export class HomeComponent {
         source: 'https://www.hawaii.edu/news/2025/03/03/uh-cybersecurity-symposium'
       }
     }
+
+    this.infoTiles = [
+      {title: 'Education', icon: ICONS.scholar, content: HOME_CONTENT.education, routerLink: '/education'},
+      {title: 'Experience', icon: ICONS.code, content: HOME_CONTENT.experience, routerLink: '/experience'},
+      {title: 'Research', icon: ICONS.documents, content: HOME_CONTENT.research, routerLink: '/publications', width: 45}
+    ]
   }
 }
 
 
 interface Images {
   cyberSymposium: ImageItem
+}
+
+interface InfoTile {
+  title: string
+  icon: ImageItem
+  content: string
+  routerLink: string
+  width?: number
 }
 
 
