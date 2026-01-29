@@ -35,7 +35,7 @@ export class InfoTileComponent implements AfterViewInit {
         }
       },
       {
-        threshold: 0.2, // triggers when 20% visible
+        threshold: 0.3, // triggers when 30% visible
       }
     );
 

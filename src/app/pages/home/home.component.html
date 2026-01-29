@@ -7,7 +7,7 @@
 <!--use padding instead of margin so blue gradient fills page-->
 <div class="page-content blue-gradient" style="padding-top: 5rem; padding-bottom: 3rem">
   <!--about row-->
-  <div class="flex-row align-center mb-3">
+  <div class="flex-row align-center mb-5">
     <!--about excerpt-->
     <div style="flex: 2; margin-right: 7rem">
       <h3 class="section-header mb-1">About</h3>
@@ -39,6 +39,48 @@
         [width]="infoTile.width ?? 60"
       ></app-info-tile>
     }
+  </div>
+
+  <!--Learn more section-->
+  <div class="flex-row" style="gap: 5rem">
+    <!--Learn more excerpt-->
+    <div style="width: 60%">
+      <h3 class="section-header mb-1">Want to Learn More?</h3>
+      <p class="text-md justify-text">{{ HOME_CONTENT.learnMore }}</p>
+    </div>
+
+    <!--icon container-->
+    <div class="flex-row justify-center" style="width: 37%; gap: 5rem">
+
+      <!--email-->
+      <div class="flex-column justify-center social-icon">
+        <a [href]="ICONS.email.href" class="no-style" rel="noopener noreferrer" target="_blank">
+          <img [alt]="ICONS.email.alt"
+               [ngSrc]="ICONS.email.image"
+               height="100"
+               width="125"
+          />
+          <p class="m-0 text-md center-text">Email</p>
+        </a>
+
+      </div>
+
+      <!--linkedin-->
+      <div class="flex-column justify-center social-icon">
+        <a [href]="ICONS.linkedin.href" class="no-style" rel="noopener noreferrer" target="_blank">
+          <img [alt]="ICONS.linkedin.alt"
+               [ngSrc]="ICONS.linkedin.image"
+               height="100"
+               width="100"
+          />
+          <p class="m-0 text-md center-text">LinkedIn</p>
+        </a>
+
+      </div>
+
+    </div>
+
+
   </div>
 </div>
 

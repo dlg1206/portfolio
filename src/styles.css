@@ -27,13 +27,24 @@ Colors
 /*
 Flex box
 */
-/*Use when children need to stacked horizontally*/
+
+/*
+Use when children need to stacked horizontally
+
+Main axis  →  left → right
+Cross axis ↓  top → bottom
+*/
 .flex-row {
   display: flex;
   flex-direction: row;
 }
 
-/*Use when children need to stacked vertically*/
+/*
+Use when children need to stacked vertically
+
+Main axis  ↓  top → bottom
+Cross axis →  left → right
+*/
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -44,12 +55,17 @@ Flex box
   justify-content: flex-start;
 }
 
+/*children are centered on MAIN  axis (horizontal for row, vertical for column)*/
+.justify-center {
+  justify-content: center;
+}
+
 /*children in flex box are ordered from right to left*/
 .justify-end {
   justify-content: flex-end;
 }
 
-/*children are aligned cross axis (vertical for row, horizontal for column)*/
+/*children are aligned CROSS (perpendicular to main) axis (vertical for row, horizontal for column)*/
 .align-center {
   align-items: center
 }
@@ -84,10 +100,18 @@ Spacing
 Text formatting
 */
 
+.no-style {
+  text-decoration: none;
+  color: inherit
+}
+
 .text-md{
   font-size: 1.5rem;
 }
 
+.center-text {
+  text-align: center;
+}
 
 .justify-text {
   text-align: justify;
