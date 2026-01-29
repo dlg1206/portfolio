@@ -6,3 +6,12 @@
   background-position: center; /* center the image */
   background-repeat: no-repeat;
 }
+
+
+.social-icon img {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.social-icon:hover img {
+  transform: translateY(-4px) scale(1.1);
+}
