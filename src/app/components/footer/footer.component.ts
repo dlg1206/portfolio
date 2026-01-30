@@ -13,9 +13,9 @@ import {ImageItem} from '../../shared/models/image-item';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+
   items: ImageItem[];
   currentYear: number = new Date().getFullYear();
-
 
   /**
    * Create footer with routes to external pages

@@ -18,18 +18,23 @@ import {HOME_CONTENT} from './content';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements AfterViewInit {
-  images: Images
-  infoTiles: InfoTile[]
-
   // Grab a reference to the DOM elements
   @ViewChild('aboutRow', {static: true}) aboutRow!: ElementRef;
   @ViewChild('infoRow', {static: true}) infoRow!: ElementRef;
   @ViewChild('learnMoreRow', {static: true}) learnMoreRow!: ElementRef;
 
+  images: Images
+  infoTiles: InfoTile[]
+
+  // globals to be used directly in the html
   protected readonly ICONS = ICONS;
   protected readonly HOME_CONTENT = HOME_CONTENT;
 
+  /**
+   * Create homepage
+   */
   constructor() {
+    // images used on homepage
     this.images = {
       cyberSymposium: {
         image: 'img/manoa-csec-symposium-2025.jpg',
@@ -38,6 +43,7 @@ export class HomeComponent implements AfterViewInit {
       }
     }
 
+    // details for info tiles
     this.infoTiles = [
       {title: 'Education', icon: ICONS.scholar, content: HOME_CONTENT.education, routerLink: '/education'},
       {title: 'Experience', icon: ICONS.code, content: HOME_CONTENT.experience, routerLink: '/experience'},
@@ -45,20 +51,23 @@ export class HomeComponent implements AfterViewInit {
     ]
   }
 
-
+  /**
+   * Set animation behavior after reload
+   */
   ngAfterViewInit() {
-
+    // create new observer
     const observer = new IntersectionObserver(
       (entries) => {
+        // If entry visible, run animation
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
             // animate once
+            entry.target.classList.add('fade-in');
             observer.unobserve(entry.target);
           }
         });
       },
-      // wait until 30% loaded
+      // wait until 40% loaded
       {threshold: 0.4}
     );
 
@@ -69,11 +78,16 @@ export class HomeComponent implements AfterViewInit {
   }
 }
 
-
+/**
+ * Image collection
+ */
 interface Images {
   cyberSymposium: ImageItem
 }
 
+/**
+ * DTO for info tiles
+ */
 interface InfoTile {
   title: string
   icon: ImageItem
@@ -81,6 +95,3 @@ interface InfoTile {
   routerLink: string
   width?: number
 }
-
-
-

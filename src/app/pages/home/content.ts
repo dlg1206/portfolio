@@ -1,4 +1,6 @@
-/*Stored data for page content*/
+/**
+ * Document to store large text fields
+ */
 export const HOME_CONTENT = {
   aboutMe: "I pride myself on completing tasks efficiently and in a timely manner, by using creative and flexible thinking. I am able to find unique solutions to accomplish any goal that I am given, through the use of my knowledge of project-based management and coding expertise. I am able to work effectively with colleagues, as well as lead a group to collective success by engaging in feedback, and challenging new processes. With this, I look forward to putting my abilities to use in the workplace, while continuing to develop new skills.",
   education: "I completed my undergraduate degree at the Rochester Institute of Technology and graduated with my Bachelor’s in Computer Science as part of the class of 2024. After graduating, I continued my education at the University of Hawai’i at Mānoa, earning my Master’s degree in Computer Science in the spring of 2026. I remained at the University of Hawai’i at Mānoa, where I continue to work towards a Ph.D. in Computer Science.",

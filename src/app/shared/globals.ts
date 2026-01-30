@@ -1,5 +1,8 @@
 import {ImageItem} from './models/image-item';
 
+/**
+ * List of social links
+ */
 export const SocialLinks = {
   github: 'https://github.com/dlg1206',
   linkedin: 'https://www.linkedin.com/in/derek-garcia',
@@ -10,7 +13,9 @@ export const SocialLinks = {
 };
 
 
-/** Collection of icons, keyed by icon name */
+/**
+ * Collection of icons, keyed by icon name
+ */
 export type IconName =
   'github'
   | 'linkedin'

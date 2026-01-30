@@ -14,6 +14,7 @@ import {SimpleButtonComponent} from '../../../../shared/components/simple-button
   standalone: true
 })
 export class InfoTileComponent {
+  // params for component
   @Input() title!: string
   @Input() icon!: ImageItem
   @Input() content!: string

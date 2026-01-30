@@ -13,12 +13,15 @@ import {SimpleButtonComponent} from '../../shared/components/simple-button/simpl
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
   items: NavItem[];
 
   /**
-   * Create new nav bar with routes to over pages
+   * Create new nav bar with routes to other pages
+   *
+   * @param router Router to other pages
    */
-  constructor(public router: Router) {
+  constructor(private router: Router) {
     this.items = [
       {label: 'About', routerLink: '/about'},
       {label: 'Education', routerLink: '/education'},
@@ -31,13 +34,17 @@ export class HeaderComponent {
 
   /**
    * Check if this the homepage
+   *
+   * @returns True if homepage, false otherwise
    */
   get isHomePage(): boolean {
     return this.router.url === '/';
   }
 }
 
-
+/**
+ * Item for nav bar
+ */
 interface NavItem {
   label: string
   routerLink: string

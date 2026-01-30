@@ -18,17 +18,21 @@ export class HeroComponent implements AfterViewInit {
   @ViewChild('heroTitle', {static: true}) heroTitle!: ElementRef;
   @ViewChild('heroSubtitle', {static: true}) heroSubtitle!: ElementRef;
 
-
   images: Images
   socialIcons: IconItem[]
   socialIconsVisible: boolean = false
 
+  /**
+   * Create new instance of hero
+   */
   constructor() {
+    // images used
     this.images = {
       banner: {image: 'img/landscape.png', alt: 'Overlook of mountain range and town in Hawai\'i'},
       welcome: {image: 'garcia/welcome.png', alt: 'Portrait picture of Derek Garcia'},
     }
 
+    // social icons
     this.socialIcons = [
       {href: ICONS.linkedin.href, alt: ICONS.linkedin.alt, image: ICONS.linkedin.image},
       {href: ICONS.github.href, alt: ICONS.github.alt, image: ICONS.github.image},
@@ -39,7 +43,9 @@ export class HeroComponent implements AfterViewInit {
     ]
   }
 
-
+  /**
+   * Set animation behavior after reload
+   */
   ngAfterViewInit() {
     // Create an IntersectionObserver to watch when the card enters the viewport
     const observer = new IntersectionObserver(
@@ -63,12 +69,17 @@ export class HeroComponent implements AfterViewInit {
   }
 }
 
-
+/**
+ * Image collection used by hero
+ */
 interface Images {
   banner: ImageItem
   welcome: ImageItem
 }
 
+/**
+ * Single icon
+ */
 interface IconItem {
   href: string | undefined;
   alt: string;
