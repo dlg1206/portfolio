@@ -1,0 +1,28 @@
+.simple-btn {
+  background-color: var(--orange-accent);
+  border: none;
+  outline: none;
+  color: black;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+  transition-delay: 0s;
+}
+
+.simple-btn:hover {
+  background-color: var(--beige-secondary);
+  transition-delay: 150ms;
+}
+
+
+.pad-md {
+  padding: 0.25em 1em;
+  border-radius: 13px;
+  font-size: 1.125em;
+}
+
+.pad-lg {
+  padding: 0.6em 1em;
+  border-radius: 10px;
+  font-size: 1.125em;
+}

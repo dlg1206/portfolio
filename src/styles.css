@@ -1,3 +1,6 @@
+/*
+Vars
+*/
 :root {
   --font-base: 'Instrument Sans', sans-serif;
 
@@ -13,22 +16,127 @@
   --yellow-accent: #F5DF8B;
 }
 
-.container {
+/*
+Colors
+*/
+.blue-gradient {
+  background: linear-gradient(to bottom, var(--background), var(--background-1));
+}
+
+
+/*
+Flex box
+*/
+
+/*
+Use when children need to stacked horizontally
+
+Main axis  →  left → right
+Cross axis ↓  top → bottom
+*/
+.flex-row {
   display: flex;
+  flex-direction: row;
 }
 
-.right-aligned {
-  margin-left: auto;
+/*
+Use when children need to stacked vertically
+
+Main axis  ↓  top → bottom
+Cross axis →  left → right
+*/
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*children in flex box are ordered from left to right*/
+.justify-start {
+  justify-content: flex-start;
+}
+
+/*children are centered on MAIN  axis (horizontal for row, vertical for column)*/
+.justify-center {
+  justify-content: center;
+}
+
+/*children in flex box are ordered from right to left*/
+.justify-end {
+  justify-content: flex-end;
+}
+
+/*children are aligned CROSS (perpendicular to main) axis (vertical for row, horizontal for column)*/
+.align-center {
+  align-items: center
+}
+
+/*
+Spacing
+*/
+
+.m-0{
+  margin: 0;
+}
+
+.mb-1{
+  margin-bottom: 1rem;
+}
+
+.mb-3{
+  margin-bottom: 3rem;
 }
 
 
-body {
-  display: block;
+.mb-5{
+  margin-bottom: 5rem;
+}
+
+
+.page-content {
+  padding: 0 5rem; /*left and right spacing*/
+}
+
+/*
+Text formatting
+*/
+
+.no-style {
+  text-decoration: none;
+  color: inherit
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+.text-md{
+  font-size: 1.5rem;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/*
+Global config
+*/
+
+html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+
+  overflow-x: hidden; /*prevent horizontal scrolling*/
 
   font-family: var(--font-base), sans-serif;
   color: white;
+}
+
+
+div,img,p {
+  /*border: red solid 1px*/
 }

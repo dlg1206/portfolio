@@ -1,0 +1,47 @@
+<!--background image-->
+<div [ngStyle]="{'background-image': 'url(' + images.banner.image + ')' }" class="full-cover">
+  <!--overlay-->
+  <div class="page-content flex-row" style="padding-top: 5rem">
+
+    <!--picture-->
+    <img [alt]="images.welcome.alt"
+         [ngSrc]="images.welcome.image"
+         height="600"
+         style="margin-left: 5rem; margin-top: auto;"
+         width="404"
+    />
+
+    <!--welcome-->
+    <div class="flex-column justify-center" style="margin-left: 10rem">
+      <!--greeting-->
+      <h1 #heroTitle class="hero-title hidden">
+        Hello there 👋
+        <br>
+        <span class="no-break">I'm <span style="color: var(--orange-accent)">Derek Garcia</span></span>
+      </h1>
+      <h2 #heroSubtitle class="hero-subtitle mb-1 hidden">Researcher and <span
+        class="no-break">Software Developer</span></h2>
+
+      <!--icon row-->
+      <div class="flex-row align-center" style="gap: 1.5rem;">
+        @for (icon of socialIcons; track icon.href; let i = $index) {
+          <a
+            class="social-icon hidden"
+            [class.visible]="socialIconsVisible"
+            [style.transition-delay.s]="(i * .1) + 1.25"
+            [href]="icon.href"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              [alt]="icon.alt"
+              [ngSrc]="icon.image"
+              [height]="icon.height ?? 50"
+              [width]="icon.width ?? 50"
+            />
+          </a>
+        }
+      </div>
+
+    </div>
+  </div>
+</div>

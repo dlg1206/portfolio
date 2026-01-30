@@ -1,7 +1,7 @@
 /*
 Menu bar styling
  */
-.menubar {
+.header {
   background-color: var(--background);
   /* vertically align centers */
   display: flex;
@@ -14,6 +14,16 @@ Menu bar styling
   border-bottom-color: var(--windsurf-accent);
   border-bottom-width: .4em;
   border-bottom-style: solid;
+}
+
+/* Pushes the right group to the far right */
+.nav-right {
+  margin-left: auto;
+}
+
+/* Disable bottom border on home page */
+.header.no-border {
+  border-bottom: none;
 }
 
 .menu-items {
@@ -36,6 +46,10 @@ Menu bar styling
   color: var(--lt-blue-accent);
 }
 
+.resume-btn {
+  font-size: 1.125em;
+}
+
 
 /*
 Name Styling
@@ -45,24 +59,3 @@ Name Styling
   font-size: 2.25em;
 }
 
-/* disable hyperlink decoration */
-.name.no-style-line {
-  color: inherit;
-  text-decoration: none;
-}
-
-/**
-Resume Button
- */
-.resume-btn {
-  padding: 0.25em 1em;
-  background-color: var(--orange-accent);
-  color: black;
-  text-decoration: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.resume-btn:hover {
-  background-color: var(--beige-secondary);
-}

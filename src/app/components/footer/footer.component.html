@@ -1,0 +1,20 @@
+<!--todo collapses into columns after a certain pixel width-->
+<footer class="footer">
+  <div>
+    <div class="menu-items">
+      @for (item of items; track item.alt) {
+        <!--social link-->
+        <a [href]="item.href" target="_blank" rel="noopener" class="menu-item">
+          <img
+            [ngSrc]="item.image"
+            [alt]="item.alt"
+            width="20"
+            height="20"
+          />
+          <span>{{ item.alt }}</span>
+        </a>
+      }
+    </div>
+    <p class="footer-text">© {{ currentYear }} Derek Garcia. All rights reserved.</p>
+  </div>
+</footer>

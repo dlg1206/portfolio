@@ -1,0 +1,25 @@
+.info-card {
+  color: black;
+  background: var(--lt-blue-accent);
+
+  padding: 1rem 1.5rem;
+  box-sizing: border-box; /*Padding and border are INCLUDED in the declared height.*/
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  height: 100%;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.info-header {
+  font-size: 2rem;
+}
+
+
+
