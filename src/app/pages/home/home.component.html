@@ -2,27 +2,6 @@
 <app-hero></app-hero>
 <!--use padding instead of margin so blue gradient fills page-->
 <div class="page-content blue-gradient" style="padding-top: 5rem; padding-bottom: 3rem">
-  <!--about row-->
-  <div #aboutRow class="hidden flex-row align-center mb-5" style="gap: 5rem; min-width: 600px;">
-    <!--about excerpt-->
-    <div style="width: 60%; min-width: 600px;">
-      <h3 class="section-header mb-1">About</h3>
-      <p class="text-md justify-text">{{ HOME_CONTENT.aboutMe }}</p>
-    </div>
-    <!--picture background-->
-    <div class="group-background" style="min-width: 540px;">
-      <!--picture-->
-      <a [href]="images.cyberSymposium.source" rel="noopener noreferrer" target="_blank">
-        <img [alt]="images.cyberSymposium.alt"
-             [ngSrc]="images.cyberSymposium.image"
-             height="360"
-             style="margin-bottom: 0.5rem"
-             width="540"
-        />
-      </a>
-      <p class="group-text">RIT Alum at the UH Cybersecurity Symposium</p>
-    </div>
-  </div>
 
   <!--info tiles-->
   <div #infoRow class="hidden info-card-grid mb-5">
@@ -38,36 +17,25 @@
   </div>
 
   <!--Learn more section-->
-  <div #learnMoreRow class="hidden flex-row" style="gap: 5rem; min-width: 600px;">
+  <div #learnMoreRow class="hidden flex-row align-center mb-5" style="gap: 5rem; min-width: 600px;">
     <!--Learn more excerpt-->
     <div style="width: 60%; min-width: 600px;">
       <h3 class="section-header mb-1">Want to Learn More?</h3>
+      <!--todo expand with more text-->
       <p class="text-md justify-text">{{ HOME_CONTENT.learnMore }}</p>
     </div>
-    <!--icon container-->
-    <div class="flex-row justify-center" style="width: 37%; gap: 5rem">
-      <!--email-->
-      <div class="flex-column justify-center social-icon">
-        <a [href]="ICONS.email.href" class="no-style" rel="noopener noreferrer" target="_blank">
-          <img [alt]="ICONS.email.alt"
-               [ngSrc]="ICONS.email.image"
-               height="100"
-               width="125"
-          />
-          <p class="m-0 text-md center-text">Email</p>
-        </a>
-      </div>
-      <!--linkedin-->
-      <div class="flex-column justify-center social-icon">
-        <a [href]="ICONS.linkedin.href" class="no-style" rel="noopener noreferrer" target="_blank">
-          <img [alt]="ICONS.linkedin.alt"
-               [ngSrc]="ICONS.linkedin.image"
-               height="100"
-               width="100"
-          />
-          <p class="m-0 text-md center-text">LinkedIn</p>
-        </a>
-      </div>
+    <!--picture background-->
+    <div class="group-background" style="min-width: 540px;">
+      <!--picture-->
+      <a [href]="images.cyberSymposium.source" rel="noopener noreferrer" target="_blank">
+        <img [alt]="images.cyberSymposium.alt"
+             [ngSrc]="images.cyberSymposium.image"
+             height="360"
+             style="margin-bottom: 0.5rem"
+             width="540"
+        />
+      </a>
+      <p class="group-text">RIT Alum at the UH Cybersecurity Symposium</p>
     </div>
   </div>
 </div>

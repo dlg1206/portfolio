@@ -19,7 +19,6 @@ import {HOME_CONTENT} from './content';
 })
 export class HomeComponent implements AfterViewInit {
   // Grab a reference to the DOM elements
-  @ViewChild('aboutRow', {static: true}) aboutRow!: ElementRef;
   @ViewChild('infoRow', {static: true}) infoRow!: ElementRef;
   @ViewChild('learnMoreRow', {static: true}) learnMoreRow!: ElementRef;
 
@@ -72,7 +71,6 @@ export class HomeComponent implements AfterViewInit {
     );
 
     // observe elements
-    observer.observe(this.aboutRow.nativeElement);
     observer.observe(this.infoRow.nativeElement);
     observer.observe(this.learnMoreRow.nativeElement);
   }
