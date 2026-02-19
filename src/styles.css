@@ -12,6 +12,7 @@ Vars
 
   --windsurf-accent: #748CAB;
   --lt-blue-accent: #8FC1C4;
+  --hawaiian-breeze-accent: #77C9DC;
   --orange-accent: #F76902;
   --yellow-accent: #F5DF8B;
 }
@@ -120,6 +121,15 @@ Text formatting
 .justify-text {
   text-align: justify;
   text-justify: inter-word;
+}
+
+/*
+Heading types
+ */
+.page-header {
+  font-size: 3.75em;
+  text-decoration: underline;
+  font-weight: 300;
 }
 
 /*
