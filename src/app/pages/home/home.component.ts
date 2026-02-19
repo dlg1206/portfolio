@@ -22,11 +22,10 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('infoRow', {static: true}) infoRow!: ElementRef;
   @ViewChild('learnMoreRow', {static: true}) learnMoreRow!: ElementRef;
 
-  images: Images
+  imageCollection: Record<string, ImageItem>
   infoTiles: InfoTile[]
 
   // globals to be used directly in the html
-  protected readonly ICONS = ICONS;
   protected readonly HOME_CONTENT = HOME_CONTENT;
 
   /**
@@ -34,7 +33,7 @@ export class HomeComponent implements AfterViewInit {
    */
   constructor() {
     // images used on homepage
-    this.images = {
+    this.imageCollection = {
       cyberSymposium: {
         image: 'img/manoa-csec-symposium-2025.jpg',
         alt: 'Derek with RIT alumni standing and smiling at the camera',
@@ -74,13 +73,6 @@ export class HomeComponent implements AfterViewInit {
     observer.observe(this.infoRow.nativeElement);
     observer.observe(this.learnMoreRow.nativeElement);
   }
-}
-
-/**
- * Image collection
- */
-interface Images {
-  cyberSymposium: ImageItem
 }
 
 /**
