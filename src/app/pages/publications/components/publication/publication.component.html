@@ -1,0 +1,32 @@
+<div class="mb-1">
+  <!--Title-->
+  <h2 style="margin-top: 0; margin-bottom: .25rem">{{ publication.title }}</h2>
+  <!--Abstract excerpt-->
+  <p class="ellipsis" style="margin-top: 0; margin-bottom: .5rem">{{ publication.abstract }}</p>
+  <!--Authors-->
+  <p style="color: var(--windsurf-accent); margin-top: 0; margin-bottom: .5rem">
+    @for (author of publication.authors; track $index) {
+      <!--bold if index-->
+      <span [class.bold]="$index === publication.boldIndex">{{ author }}</span>
+      <!--close span if last author-->
+      @if ($index < publication.authors.length - 1) {
+        <span>, </span>
+      }
+    }
+  </p>
+  <!--Links-->
+  <div class="flex-row" style="gap: .5rem">
+    @if (publication.href) {
+      <app-pub-button [content]="'Link'" [href]=publication.href></app-pub-button>
+    }
+    @if (publication.citation) {
+      <app-pub-button [content]="'Cite'" [copyContent]="publication.citation"></app-pub-button>
+    }
+    @if (publication.doi) {
+      <app-pub-button [content]="'DOI'" [copyContent]=publication.doi></app-pub-button>
+    }
+  </div>
+</div>
+
+
+
