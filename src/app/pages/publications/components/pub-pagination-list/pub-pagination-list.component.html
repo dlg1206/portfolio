@@ -1,0 +1,27 @@
+
+<!--@for (p of paginatedPublications; track $index; let i = $index) {-->
+<!--  <div-->
+<!--    class="fade-item"-->
+<!--    [ngClass]="{ 'hidden': !p.isVisible, 'visible': p.isVisible }"-->
+<!--    [style.transition-delay.s]="i * 0.15">-->
+<!--    <app-publication [publication]="p"></app-publication>-->
+<!--  </div>-->
+
+<!--}-->
+
+@for (p of paginatedPublications; let i = $index; track trackByUid; ) {
+  <div animate.enter="fade-in" animate.leave="no-animation"
+    [style.transition-delay.s]="i * 0.15">
+    <app-publication [publication]="p"></app-publication>
+  </div>
+
+}
+
+<p-paginator
+  [first]="startIndex"
+  [rows]="pageSize"
+  [totalRecords]="publications.length"
+  [rowsPerPageOptions]="[5, 10]"
+  (onPageChange)="onPageChange($event)">
+</p-paginator>
+
