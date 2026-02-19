@@ -1,0 +1,12 @@
+.pub-btn {
+  background: none;
+  border: 1px solid var(--hawaiian-breeze-accent);
+  color: var(--hawaiian-breeze-accent);
+
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pub-btn:active {
+  transform: scale(0.97); /* subtle click "press" effect */
+}
