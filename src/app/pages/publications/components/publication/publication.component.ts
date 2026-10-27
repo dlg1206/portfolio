@@ -7,7 +7,6 @@ import {PubButtonComponent} from '../pub-button/pub-button.component';
   selector: 'app-publication',
   imports: [
     PubButtonComponent
-
   ],
   templateUrl: './publication.component.html',
   styleUrl: './publication.component.css',
