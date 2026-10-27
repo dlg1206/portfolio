@@ -3,8 +3,9 @@ import {NgOptimizedImage} from '@angular/common';
 import {ImageItem} from '../../shared/models/image-item';
 import {HeroComponent} from './components/hero/hero.component';
 import {ICONS} from '../../shared/globals';
-import {InfoTileComponent} from './components/info-tile/info-tile.component';
 import {HOME_CONTENT} from './content';
+import {SimpleButtonComponent} from '../../shared/components/simple-button/simple-button.component';
+import {SectionTitleComponent} from '../../shared/components/section-title/section-title.component';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ import {HOME_CONTENT} from './content';
   imports: [
     NgOptimizedImage,
     HeroComponent,
-    InfoTileComponent
+    SimpleButtonComponent,
+    SectionTitleComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -35,10 +37,9 @@ export class HomeComponent implements AfterViewInit {
   constructor() {
     // images used on homepage
     this.images = {
-      cyberSymposium: {
-        image: 'img/manoa-csec-symposium-2025.jpg',
-        alt: 'Derek with RIT alumni standing and smiling at the camera',
-        source: 'https://www.hawaii.edu/news/2025/03/03/uh-cybersecurity-symposium'
+      aboutMeGarcia: {
+        image: "garcia/about_me.jpg",
+        alt: "Derek Garcia smiling at past the camera while buttoning up his suit jacket",
       }
     }
 
@@ -80,7 +81,7 @@ export class HomeComponent implements AfterViewInit {
  * Image collection
  */
 interface Images {
-  cyberSymposium: ImageItem
+  aboutMeGarcia: ImageItem
 }
 
 /**
