@@ -1,0 +1,13 @@
+.section-header-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 0;
+}
+
+.accent-line {
+  margin-left: 0;
+  width: 5rem;
+  height: 0.3125rem;
+  background: var(--orange-accent);
+  stroke: var(--orange-accent);
+}
