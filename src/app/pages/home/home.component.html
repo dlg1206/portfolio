@@ -1,42 +1,30 @@
 <!--Welcome banner-->
 <app-hero></app-hero>
 <!--use padding instead of margin so blue gradient fills page-->
-<div class="page-content blue-gradient" style="padding-top: 5rem; padding-bottom: 3rem">
+<div class="blue-gradient">
+  <div class="page-content-container">
 
-  <!--info tiles-->
-  <div #infoRow class="hidden info-card-grid mb-5">
-    @for (infoTile of infoTiles; track infoTile.title) {
-      <app-info-tile
-        [title]="infoTile.title"
-        [icon]="infoTile.icon"
-        [content]="infoTile.content"
-        [routerLink]="infoTile.routerLink"
-        [width]="infoTile.width ?? 60"
-      ></app-info-tile>
-    }
-  </div>
+    <!--About me row-->
+    <div class="content-row" style="align-items: center; gap: 4.063rem; ">
+      <div>
+        <app-section-title [title]="'About Me'"></app-section-title>
+        <p class="about-me-text">
+          I am a passionate software security researcher dedicated to finding and answering interesting security
+          problems. I love working with new technologies to find innovative solutions to address the ever present
+          challenges with create a more secure software supply chain.
+        </p>
+        <app-simple-button [content]="'Learn More'" [routerLink]="'/about'" class="resume-btn"></app-simple-button>
+      </div>
 
-  <!--Learn more section-->
-  <div #learnMoreRow class="hidden flex-row align-center mb-5" style="gap: 5rem; min-width: 600px;">
-    <!--Learn more excerpt-->
-    <div style="width: 60%; min-width: 600px;">
-      <h3 class="section-header mb-1">Want to Learn More?</h3>
-      <!--todo expand with more text-->
-      <p class="text-md justify-text">{{ HOME_CONTENT.learnMore }}</p>
+      <img [alt]="images.aboutMeGarcia.alt"
+           [ngSrc]="images.aboutMeGarcia.image"
+           width="277"
+           height="351"
+           class="avatar"
+      />
     </div>
-    <!--picture background-->
-    <div class="group-background" style="min-width: 540px;">
-      <!--picture-->
-      <a [href]="images.cyberSymposium.source" rel="noopener noreferrer" target="_blank">
-        <img [alt]="images.cyberSymposium.alt"
-             [ngSrc]="images.cyberSymposium.image"
-             height="360"
-             style="margin-bottom: 0.5rem"
-             width="540"
-        />
-      </a>
-      <p class="group-text">RIT Alum at the UH Cybersecurity Symposium</p>
-    </div>
+
   </div>
 </div>
+
 

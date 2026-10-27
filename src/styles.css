@@ -91,9 +91,18 @@ Spacing
   margin-bottom: 5rem;
 }
 
+.page-content-container {
+  padding: 3rem 5rem 3rem; /*left and right spacing*/
 
-.page-content {
-  padding: 0 5rem; /*left and right spacing*/
+  max-width: 79.375rem;
+  min-width: 60rem;
+  margin-inline: auto;
+}
+
+.content-row{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3.125rem;
 }
 
 /*
