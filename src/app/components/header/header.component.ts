@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
+import {Component, inject} from '@angular/core';
+import {NavigationEnd, Router, RouterLink} from '@angular/router';
 import {SimpleButtonComponent} from '../../shared/components/simple-button/simple-button.component';
+import {toSignal} from '@angular/core/rxjs-interop';
+import {filter, map} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -9,37 +11,27 @@ import {SimpleButtonComponent} from '../../shared/components/simple-button/simpl
     SimpleButtonComponent
   ],
   templateUrl: './header.component.html',
-  standalone: true,
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 
-  items: NavItem[];
+  private readonly router = inject(Router);
 
-  /**
-   * Create new nav bar with routes to other pages
-   *
-   * @param router Router to other pages
-   */
-  constructor(private router: Router) {
-    this.items = [
-      {label: 'About', routerLink: '/about'},
-      {label: 'Education', routerLink: '/education'},
-      {label: 'Experience', routerLink: '/experience'},
-      {label: 'Publications', routerLink: '/publications'},
-      {label: 'Projects', routerLink: '/projects'}
-    ];
-  }
+  readonly items: NavItem[] = [
+    {label: 'About', routerLink: '/about'},
+    {label: 'Experience', routerLink: '/experience'},
+    {label: 'Projects', routerLink: '/projects'},
+    {label: 'Publications', routerLink: '/publications'},
+  ];
 
-
-  /**
-   * Check if this the homepage
-   *
-   * @returns True if homepage, false otherwise
-   */
-  get isHomePage(): boolean {
-    return this.router.url === '/';
-  }
+  // Check if this the homepage
+  readonly isHomePage = toSignal(
+    this.router.events.pipe(
+      filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+      map((e) => e.urlAfterRedirects === '/'),
+    ),
+    {initialValue: this.router.url === '/'},
+  );
 }
 
 /**
