@@ -1,4 +1,3 @@
-<!--todo - collapse when window shrinks-->
 <nav [class.no-border]="isHomePage()" class="header">
   <!-- Left side -->
   <a class="name no-style no-break" routerLink="/">Derek Garcia</a>
@@ -16,7 +15,9 @@
       }
 
       <!--resume button-->
-      <app-simple-button [content]="'Resume'" [routerLink]="'/'" class="resume-btn"></app-simple-button>
+      <li>
+        <app-simple-button [content]="'Resume'" [routerLink]="'/'" class="resume-btn"></app-simple-button>
+      </li>
     </ul>
   </div>
 </nav>
