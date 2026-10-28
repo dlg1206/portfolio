@@ -1,0 +1,39 @@
+/* software-carousel.component.css */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  /* transparent edges = fade in on the left, fade out on the right */
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 40s linear infinite;
+}
+
+.track img {
+  width: 6.25rem;
+  height: 6.25rem;
+  margin-right: 3rem; /* use margin, not gap, so the loop is seamless */
+  flex-shrink: 0;
+}
+
+/*.carousel:hover .track {*/
+/*  animation-play-state: paused;*/
+/*}*/
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

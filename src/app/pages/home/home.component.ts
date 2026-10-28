@@ -2,9 +2,9 @@ import {afterNextRender, Component, DestroyRef, ElementRef, inject, viewChild} f
 import {NgOptimizedImage} from '@angular/common';
 import {ImageItem} from '../../shared/models/image-item';
 import {HeroComponent} from './components/hero/hero.component';
-import {ICONS} from '../../shared/globals';
 import {SimpleButtonComponent} from '../../shared/components/simple-button/simple-button.component';
 import {SectionTitleComponent} from '../../shared/components/section-title/section-title.component';
+import {SoftwareCarouselComponent} from './components/software-carousel/software-carousel.component';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +13,16 @@ import {SectionTitleComponent} from '../../shared/components/section-title/secti
     NgOptimizedImage,
     HeroComponent,
     SimpleButtonComponent,
-    SectionTitleComponent
+    SectionTitleComponent,
+    SoftwareCarouselComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  /*capture rows for fade in animation*/
   private readonly aboutMeRow = viewChild.required<ElementRef<HTMLElement>>('aboutMeRow');
+  private readonly skillAndTechRow = viewChild.required<ElementRef<HTMLElement>>('skillAndTechRow');
 
   private readonly destroyRef = inject(DestroyRef);
 
@@ -27,10 +30,8 @@ export class HomeComponent {
     aboutMeGarcia: {
       image: 'garcia/about_me.jpg',
       alt: 'Derek Garcia smiling past the camera while buttoning up his suit jacket',
-    },
-  };
-
-  protected readonly ICONS = ICONS;
+    }
+  }
 
   constructor() {
     // runs only in the browser, so it's SSR-safe
@@ -48,6 +49,7 @@ export class HomeComponent {
       );
 
       observer.observe(this.aboutMeRow().nativeElement);
+      observer.observe(this.skillAndTechRow().nativeElement);
 
       // clean up if the component is destroyed before both elements appear
       this.destroyRef.onDestroy(() => observer.disconnect());
@@ -62,13 +64,18 @@ interface Images {
   aboutMeGarcia: ImageItem
 }
 
-/**
- * DTO for info tiles
- */
-interface InfoTile {
-  title: string
-  icon: ImageItem
-  content: string
-  routerLink: string
-  width?: number
+interface SoftwareIcons {
+  angular: ImageItem
+  ansible: ImageItem
+  bash: ImageItem
+  cSharp: ImageItem
+  docker: ImageItem
+  git: ImageItem
+  java: ImageItem
+  javascript: ImageItem
+  mysql: ImageItem
+  python: ImageItem
+  redis: ImageItem
+  sqlite: ImageItem
+  typescript: ImageItem
 }
