@@ -20,7 +20,7 @@ import {SoftwareCarouselComponent} from './components/software-carousel/software
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  /*capture rows for fade in animation*/
+  // capture rows for fade in animation
   private readonly aboutMeRow = viewChild.required<ElementRef<HTMLElement>>('aboutMeRow');
   private readonly skillAndTechRow = viewChild.required<ElementRef<HTMLElement>>('skillAndTechRow');
 
@@ -28,11 +28,12 @@ export class HomeComponent {
 
   readonly images: Images = {
     aboutMeGarcia: {
-      image: 'garcia/about_me.jpg',
-      alt: 'Derek Garcia smiling past the camera while buttoning up his suit jacket',
+      image: "garcia/about_me.jpg",
+      alt: "Derek Garcia smiling past the camera while buttoning up his suit jacket",
     }
   }
 
+  // animate row loads in
   constructor() {
     // runs only in the browser, so it's SSR-safe
     afterNextRender(() => {
@@ -45,7 +46,7 @@ export class HomeComponent {
             }
           });
         },
-        {threshold: 0.4},
+        {threshold: 0.5},
       );
 
       observer.observe(this.aboutMeRow().nativeElement);
