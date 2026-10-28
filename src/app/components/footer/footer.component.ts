@@ -1,32 +1,21 @@
 import {Component} from '@angular/core';
-import {ICONS} from '../../shared/globals';
-import {NgOptimizedImage} from '@angular/common';
-import {ImageItem} from '../../shared/models/image-item';
+import {IconItem, SOCIAL_ICONS} from '../../shared/globals';
 
 @Component({
   selector: 'app-footer',
-  imports: [
-    NgOptimizedImage
-  ],
+  imports: [],
   templateUrl: './footer.component.html',
-  standalone: true,
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
 
-  items: ImageItem[];
-  currentYear: number = new Date().getFullYear();
+  protected readonly socialIcons: IconItem[] = [
+    SOCIAL_ICONS.github,
+    SOCIAL_ICONS.linkedin,
+    SOCIAL_ICONS.googleScholar,
+    SOCIAL_ICONS.email,
+    SOCIAL_ICONS.orcid
+  ];
+  protected readonly currentYear: number = new Date().getFullYear();
 
-  /**
-   * Create footer with routes to external pages
-   */
-  constructor() {
-    this.items = [
-      ICONS.github,
-      ICONS.linkedin,
-      ICONS.googleScholar,
-      ICONS.email,
-      ICONS.orcid
-    ]
-  }
 }

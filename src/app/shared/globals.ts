@@ -1,73 +1,33 @@
-import {ImageItem} from './models/image-item';
+/**
+ * Single icon
+ */
+export interface IconItem {
+  icon: string;
+  href: string;
+  alt: string;
+}
 
 /**
- * List of social links
+ * Single image
  */
-export const SocialLinks = {
-  github: 'https://github.com/dlg1206',
-  linkedin: 'https://www.linkedin.com/in/derek-garcia',
-  google_scholar: 'https://scholar.google.com/citations?user=_drXjQ4AAAAJ',
-  email: 'mailto:dgarcia2@hawaii.edu',
-  orcid: 'https://orcid.org/0009-0005-2310-8879',
-  cemetech: 'https://www.cemetech.net/users/TI_84_Coder'
-};
-
+export interface IconItem {
+  icon: string;
+  href: string;
+  alt: string;
+}
 
 /**
- * Collection of icons, keyed by icon name
+ * List of social icons
  */
-export type IconName =
-  'github'
-  | 'linkedin'
-  | 'googleScholar'
-  | 'orcid'
-  | 'email'
-  | 'cemetech'
-  | 'scholar'
-  | 'code'
-  | 'documents';
-export type Icons = Record<IconName, ImageItem>;
-export const ICONS: Icons = {
-  github: {
-    alt: 'GitHub',
-    image: 'icons/github.svg',
-    href: SocialLinks.github
-  },
-  linkedin: {
-    alt: 'LinkedIn',
-    image: 'icons/linkedin.svg',
-    href: SocialLinks.linkedin
-  },
+export const SOCIAL_ICONS = {
+  linkedin: {icon: "pi pi-linkedin", href: "https://www.linkedin.com/in/derek-garcia", alt: "LinkedIn"},
+  github: {icon: "pi pi-github", href: "https://github.com/dlg1206", alt: "GitHub"},
+  orcid: {icon: "fa-brands fa-orcid", href: "https://orcid.org/0009-0005-2310-8879", alt: "ORCID"},
   googleScholar: {
-    alt: 'Google Scholar',
-    image: 'icons/google_scholar.svg',
-    href: SocialLinks.google_scholar
+    icon: "fa-brands fa-google-scholar",
+    href: "https://scholar.google.com/citations?user=_drXjQ4AAAAJ",
+    alt: "Google Scholar"
   },
-  orcid: {
-    alt: 'ORCID',
-    image: 'icons/orcid.svg',
-    href: SocialLinks.orcid
-  },
-  email: {
-    alt: 'Email',
-    image: 'icons/email.svg',
-    href: SocialLinks.email
-  },
-  cemetech: {
-    alt: 'Calculator',
-    image: 'icons/calculator.svg',
-    href: SocialLinks.cemetech
-  },
-  scholar: {
-    alt: 'scholar',
-    image: 'icons/scholar.svg'
-  },
-  code: {
-    alt: 'code',
-    image: 'icons/code.svg'
-  },
-  documents: {
-    alt: 'documents',
-    image: 'icons/documents.svg'
-  },
-};
+  email: {icon: "pi pi-envelope", href: "mailto:dgarcia2@hawaii.edu", alt: "Email"},
+  calculator: {icon: "pi pi-calculator", href: "https://www.cemetech.net/users/TI_84_Coder", alt: "Cemetech"}
+} satisfies Record<string, IconItem>;

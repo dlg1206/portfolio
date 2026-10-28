@@ -61,7 +61,7 @@
   display: block;
   font-size: 3.125rem;
   line-height: 1;
-  width: 1em;          /* glyph box is exactly font-size wide */
+  width: 1em; /* glyph box is exactly font-size wide */
   height: 1em;
   text-align: center;
 }
@@ -70,6 +70,7 @@
   transform: translateY(-4px) scale(1.1);
   color: var(--lt-blue-accent);
 }
+
 /*animation*/
 .hidden {
   opacity: 0;
