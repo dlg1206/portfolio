@@ -2,23 +2,13 @@
 Menu bar styling
  */
 .header {
-  background-color: var(--background);
-  /* vertically align centers */
   display: flex;
   align-items: center;
-
-  /* top/bottom left/right */
-  padding: .5em 2em;
-
+  padding: 0.5em 2em;
+  gap: 10rem;
+  background-color: var(--background);
   /* bottom seperator */
-  border-bottom-color: var(--windsurf-accent);
-  border-bottom-width: .4em;
-  border-bottom-style: solid;
-}
-
-/* Pushes the right group to the far right */
-.nav-right {
-  margin-left: auto;
+  border-bottom: 0.4em solid var(--windsurf-accent);
 }
 
 /* Disable bottom border on home page */
@@ -26,36 +16,39 @@ Menu bar styling
   border-bottom: none;
 }
 
+/* Pushes the right group to the far right */
+.nav-right {
+  margin-left: auto;
+}
+
+/* Name */
+.name {
+  font-size: 2.25em;
+  font-weight: 600;
+}
+
+/* Menu */
 .menu-items {
-  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
+  list-style: none;
 }
 
-.menu-item {
-  text-decoration: none;
-  color: white;
-  font-size: 1.125em;
-  transition: color 0.3s ease;
-}
-
-.menu-item:hover {
-  color: var(--lt-blue-accent);
-}
-
+.menu-item,
 .resume-btn {
   font-size: 1.125em;
 }
 
-
-/*
-Name Styling
- */
-.name {
-  font-weight: 600;
-  font-size: 2.25em;
+.menu-item {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+.menu-item:hover,
+.menu-item:focus-visible {
+  color: var(--lt-blue-accent);
+}
