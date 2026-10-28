@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {NavigationEnd, Router, RouterLink} from '@angular/router';
-import {SimpleButtonComponent} from '../../shared/components/simple-button/simple-button.component';
+import {SimpleButtonComponent} from '../simple-button/simple-button.component';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {filter, map} from 'rxjs';
 

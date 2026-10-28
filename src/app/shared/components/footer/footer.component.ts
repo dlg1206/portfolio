@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IconItem, SOCIAL_ICONS} from '../../shared/globals';
+import {IconItem, SOCIAL_ICONS} from '../../globals';
 
 @Component({
   selector: 'app-footer',
