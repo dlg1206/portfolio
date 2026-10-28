@@ -135,7 +135,7 @@ Text formatting
 Global config
 */
 
-html, body {
+html, body, header, footer {
   margin: 0;
   padding: 0;
 

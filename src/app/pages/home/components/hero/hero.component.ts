@@ -1,7 +1,7 @@
 import {afterNextRender, Component, DestroyRef, ElementRef, inject, signal, viewChild} from '@angular/core';
 import {NgOptimizedImage, NgStyle} from '@angular/common';
 import {ImageItem} from '../../../../shared/models/image-item';
-import {SocialLinks} from '../../../../shared/globals';
+import {IconItem, SOCIAL_ICONS} from '../../../../shared/globals';
 
 @Component({
   selector: 'app-hero',
@@ -20,18 +20,11 @@ export class HeroComponent {
 
   private readonly destroyRef = inject(DestroyRef);
 
-  images: Images = {
-    banner: {image: "img/landscape.png", alt: "Overlook of mountain range and town in Hawai'i"},
+  protected readonly images: Images = {
+    banner: {image: "img/landscape.png", alt: "Overlook of Kāneʻohe, Hawai'i from mountain range"},
     hero: {image: "garcia/hero.png", alt: "Portrait picture of Derek Garcia"},
   }
-  socialIcons: IconItem[] = [
-    {icon: "pi pi-linkedin", href: SocialLinks.linkedin, alt: "LinkedIn"},
-    {icon: "pi pi-github", href: SocialLinks.github, alt: "GitHub"},
-    {icon: "fa-brands fa-orcid", href: SocialLinks.orcid, alt: "ORCID"},
-    {icon: "fa-brands fa-google-scholar", href: SocialLinks.google_scholar, alt: "Google Scholar"},
-    {icon: "pi pi-envelope", href: SocialLinks.email, alt: "Email"},
-    {icon: "pi pi-calculator", href: SocialLinks.cemetech, alt: "Cemetech"},
-  ];
+  protected readonly socialIcons: IconItem[] = Object.values(SOCIAL_ICONS);
 
   protected readonly heroVisible = signal(false);
   protected readonly socialIconsVisible = signal(false);
@@ -63,15 +56,4 @@ interface Images {
   banner: ImageItem
   hero: ImageItem
 }
-
-/**
- * Single icon
- */
-interface IconItem {
-  icon: string;
-  href: string;
-  alt: string;
-}
-
-
 
