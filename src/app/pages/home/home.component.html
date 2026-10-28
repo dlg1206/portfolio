@@ -16,20 +16,19 @@
         <app-simple-button [content]="'Learn More'" [routerLink]="'/about'" class="resume-btn"></app-simple-button>
       </div>
 
-      <img [alt]="images.aboutMeGarcia.alt"
-           [ngSrc]="images.aboutMeGarcia.image"
-           width="277"
-           height="351"
-           class="avatar"
+      <img
+        [alt]="images.aboutMeGarcia.alt"
+        [ngSrc]="images.aboutMeGarcia.image"
+        width="277"
+        height="351"
+        class="avatar"
       />
     </div>
 
     <!--Skills & Technology-->
-    <div class="content-row">
-
+    <div #skillAndTechRow class="hidden">
+      <app-section-title [title]="'Skills & Technology'"></app-section-title>
+      <app-software-carousel/>
     </div>
-
   </div>
 </div>
-
-
