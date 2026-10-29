@@ -1,7 +1,8 @@
 import {afterNextRender, Component, DestroyRef, ElementRef, inject, signal, viewChild} from '@angular/core';
 import {NgOptimizedImage, NgStyle} from '@angular/common';
 import {ImageItem} from '../../../../shared/models/image-item';
-import {IconItem, SOCIAL_ICONS} from '../../../../shared/globals';
+import {SOCIAL_ICONS} from '../../../../shared/globals';
+import {IconItem} from '../../../../shared/models/icon-item';
 
 @Component({
   selector: 'app-hero',
@@ -20,10 +21,10 @@ export class HeroComponent {
 
   private readonly destroyRef = inject(DestroyRef);
 
-  protected readonly images: Images = {
-    banner: {image: "img/landscape.png", alt: "Overlook of Kāneʻohe, Hawai'i from mountain range"},
-    hero: {image: "garcia/hero.png", alt: "Portrait picture of Derek Garcia"},
-  }
+  protected readonly images = {
+    banner: {src: "img/landscape.png", alt: "Overlook of Kāneʻohe, Hawai'i from mountain range"},
+    hero: {src: "garcia/hero.png", alt: "Portrait picture of Derek Garcia"}
+  } satisfies Record<string, ImageItem>;
   protected readonly socialIcons: IconItem[] = Object.values(SOCIAL_ICONS);
 
   protected readonly heroVisible = signal(false);
@@ -48,12 +49,3 @@ export class HeroComponent {
     });
   }
 }
-
-/**
- * Image collection used by hero
- */
-interface Images {
-  banner: ImageItem
-  hero: ImageItem
-}
-

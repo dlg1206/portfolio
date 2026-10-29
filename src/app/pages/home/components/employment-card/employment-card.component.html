@@ -1,0 +1,20 @@
+<div class="employment-card">
+  <!--company logo-->
+  <div class="logo-container">
+    <img
+      [alt]="companyLogo().alt"
+      [ngSrc]="companyLogo().src"
+      width="50"
+      height="50"
+    />
+  </div>
+
+  <!--details-->
+  <div class="text-container">
+    <p style="font-weight: bold;">{{ startYear() }} - {{ displayEndYear() }}</p>
+    <div class="position">
+      <p>{{ position() }}</p>
+    </div>
+    <p>{{ company() }}</p>
+  </div>
+</div>

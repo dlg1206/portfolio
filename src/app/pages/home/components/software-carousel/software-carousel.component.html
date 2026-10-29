@@ -1,11 +1,11 @@
 <div class="carousel">
   <div class="track">
-    @for (icon of icons; track icon.image) {
-      <img [ngSrc]="icon.image" [alt]="icon.alt" width="512" height="512"/>
+    @for (icon of icons; track icon.src) {
+      <img [ngSrc]="icon.src" [alt]="icon.alt" width="512" height="512"/>
     }
     <!-- duplicate set for a seamless loop; hidden from screen readers -->
-    @for (icon of icons; track icon.image) {
-      <img [ngSrc]="icon.image" alt="" aria-hidden="true" width="512" height="512"/>
+    @for (icon of icons; track icon.src) {
+      <img [ngSrc]="icon.src " alt="" aria-hidden="true" width="512" height="512"/>
     }
   </div>
 </div>

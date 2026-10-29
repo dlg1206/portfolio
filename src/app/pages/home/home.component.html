@@ -5,7 +5,7 @@
   <div class="page-content-container">
 
     <!--About me row-->
-    <div #aboutMeRow class="hidden content-row" style="align-items: center; gap: 4.063rem; ">
+    <div #aboutMeRow class="content-row hidden" style="align-items: center; gap: 4.063rem; ">
       <div>
         <app-section-title [title]="'About Me'"></app-section-title>
         <p class="about-me-text">
@@ -18,7 +18,7 @@
 
       <img
         [alt]="images.aboutMeGarcia.alt"
-        [ngSrc]="images.aboutMeGarcia.image"
+        [ngSrc]="images.aboutMeGarcia.src"
         width="277"
         height="351"
         class="avatar"
@@ -29,6 +29,26 @@
     <div #skillAndTechRow class="hidden">
       <app-section-title [title]="'Skills & Technology'"></app-section-title>
       <app-software-carousel/>
+    </div>
+
+    <!--Experience-->
+    <div #experienceRow class="hidden">
+      <app-section-title [title]="'Experience'"></app-section-title>
+      <div class="content-row" style="justify-content: space-between;">
+        <!--TODO - links to experience pages?-->
+        @for (exp of experiences; track exp; let i = $index) {
+          <app-employment-card
+            class="employment-card reveal-item"
+            [style.--i]="i"
+            [position]='exp.position'
+            [company]='exp.company'
+            [startYear]='exp.startYear'
+            [endYear]='exp.endYear'
+            [companyLogo]="exp.logo"
+            [class]="exp.size">
+          </app-employment-card>
+        }
+      </div>
     </div>
   </div>
 </div>
