@@ -5,7 +5,7 @@
   <div class="page-content-container">
 
     <!--About me row-->
-    <div #aboutMeRow class="content-row hidden" style="align-items: center; gap: 4.063rem; ">
+    <div #aboutMeRow class="flex-row content-row hidden" style="align-items: center; gap: 4.063rem; ">
       <div>
         <app-section-title [title]="'About Me'"></app-section-title>
         <p class="about-me-text">
@@ -26,29 +26,31 @@
     </div>
 
     <!--Skills & Technology-->
-    <div #skillAndTechRow class="hidden">
+    <div #skillAndTechRow class="content-row hidden">
       <app-section-title [title]="'Skills & Technology'"></app-section-title>
       <app-software-carousel/>
     </div>
 
     <!--Experience-->
-    <div #experienceRow class="hidden">
+    <div #experienceRow class="content-row hidden">
       <app-section-title [title]="'Experience'"></app-section-title>
-      <div class="content-row" style="justify-content: space-between;">
+      <div class="flex-row" style="justify-content: space-between;">
         <!--TODO - links to experience pages?-->
         @for (exp of experiences; track exp; let i = $index) {
           <app-employment-card
             class="employment-card reveal-item"
             [style.--i]="i"
-            [position]='exp.position'
-            [company]='exp.company'
-            [startYear]='exp.startYear'
-            [endYear]='exp.endYear'
-            [companyLogo]="exp.logo"
-            [class]="exp.size">
+            [data]="exp">
           </app-employment-card>
         }
       </div>
     </div>
+
+    <!--Featured Projects-->
+    <div #featuredProjectsRow class="">
+      <app-section-title [title]="'Featured Projects'"></app-section-title>
+      <app-project-card/>
+    </div>
+
   </div>
 </div>

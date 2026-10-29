@@ -1,7 +1,7 @@
 import {afterNextRender, Component, DestroyRef, ElementRef, inject, signal, viewChild} from '@angular/core';
 import {NgOptimizedImage, NgStyle} from '@angular/common';
 import {ImageItem} from '../../../../shared/models/image-item';
-import {SOCIAL_ICONS} from '../../../../shared/globals';
+import {SOCIAL_ICONS} from '../../../../shared/data';
 import {IconItem} from '../../../../shared/models/icon-item';
 
 @Component({

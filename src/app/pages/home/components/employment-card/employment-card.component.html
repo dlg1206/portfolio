@@ -2,8 +2,8 @@
   <!--company logo-->
   <div class="logo-container">
     <img
-      [alt]="companyLogo().alt"
-      [ngSrc]="companyLogo().src"
+      [alt]="data().company.logo.alt"
+      [ngSrc]="data().company.logo.src"
       width="50"
       height="50"
     />
@@ -11,10 +11,10 @@
 
   <!--details-->
   <div class="text-container">
-    <p style="font-weight: bold;">{{ startYear() }} - {{ displayEndYear() }}</p>
+    <p style="font-weight: bold;">{{ period() }}</p>
     <div class="position">
-      <p>{{ position() }}</p>
+      <p>{{ data().headline.title }}</p>
     </div>
-    <p>{{ company() }}</p>
+    <p>{{ data().company.name }}</p>
   </div>
 </div>

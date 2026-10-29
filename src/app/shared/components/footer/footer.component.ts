@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {SOCIAL_ICONS} from '../../globals';
+import {SOCIAL_ICONS} from '../../data';
 import {IconItem} from '../../models/icon-item';
 
 @Component({
