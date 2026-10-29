@@ -19,10 +19,6 @@
   flex-shrink: 0;
 }
 
-/*.carousel:hover .track {*/
-/*  animation-play-state: paused;*/
-/*}*/
-
 @keyframes scroll-right {
   from {
     transform: translateX(-50%);

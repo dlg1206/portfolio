@@ -7,6 +7,7 @@ Vars
   --background: #0D1321;
   --background-1: #1D2D44;
 
+  --navy-secondary: #203344;
   --teal-secondary: #406C76;
   --beige-secondary: #F0EBD8;
 
@@ -143,9 +144,4 @@ html, body, header, footer {
 
   font-family: var(--font-base), sans-serif;
   color: white;
-}
-
-
-div, img, p {
-  /*border: red solid 1px*/
 }

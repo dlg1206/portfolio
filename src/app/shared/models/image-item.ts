@@ -1,14 +1,14 @@
 /**
  * Represents an image item used in components.
  *
- * - `image`: URL or path to the image
+ * - `src`: Path to the image
  * - `alt`: Alternative text for accessibility
- * - `source`: Optional source or credit for the image
- * - `linkURL`: Optional url to link to this image
+ * - `href`: Optional url to link to this image
+ * - `origin`: Optional url to link to where this image originated from
  */
 export interface ImageItem {
-  image: string;
+  src: string;
   alt: string;
-  source?: string;
   href?: string;
+  origin?: string;
 }
