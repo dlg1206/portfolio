@@ -1,6 +1,6 @@
 import {Component, computed, input} from '@angular/core';
-import {ImageItem} from '../../../../shared/models/image-item';
 import {NgOptimizedImage} from '@angular/common';
+import {EmploymentSummary} from '../../../../shared/models/employment';
 
 @Component({
   selector: 'app-employment-card',
@@ -11,13 +11,13 @@ import {NgOptimizedImage} from '@angular/common';
   styleUrl: './employment-card.component.css',
 })
 export class EmploymentCardComponent {
-  position = input.required<string>();
-  company = input.required<string>();
-  startYear = input.required<string>();
-  endYear = input<string | undefined>('Present');
-  companyLogo = input.required<ImageItem>();
+  data = input.required<EmploymentSummary>();
 
-  protected displayEndYear = computed(() => this.endYear() ?? 'Present');
+  // format the employment period at the company
+  protected period = computed(() => {
+    const {start, end} = this.data().headline;
+    return `${start.year} - ${end?.year ?? 'Present'}`;
+  });
 }
 
 

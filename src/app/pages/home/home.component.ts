@@ -6,7 +6,9 @@ import {SimpleButtonComponent} from '../../shared/components/simple-button/simpl
 import {SectionTitleComponent} from '../../shared/components/section-title/section-title.component';
 import {SoftwareCarouselComponent} from './components/software-carousel/software-carousel.component';
 import {EmploymentCardComponent} from './components/employment-card/employment-card.component';
-import {COMPANY_LOGOS} from '../../shared/globals';
+import {COMPANY_LOGOS} from '../../shared/data';
+import {EmploymentSummary} from '../../shared/models/employment';
+import {ProjectCardComponent} from './components/project-card/project-card.component';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +19,8 @@ import {COMPANY_LOGOS} from '../../shared/globals';
     SimpleButtonComponent,
     SectionTitleComponent,
     SoftwareCarouselComponent,
-    EmploymentCardComponent
+    EmploymentCardComponent,
+    ProjectCardComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -40,38 +43,53 @@ export class HomeComponent {
     }
   } satisfies Record<string, ImageItem>;
   // logos in card order
-  protected readonly experiences: Experience[] = [
+  // todo - move to shared data folder?
+  protected readonly experiences: EmploymentSummary[] = [
     {
-      size: 'sm',
-      position: 'Researcher',
-      company: 'Chainguard',
-      startYear: '2024',
-      logo: COMPANY_LOGOS.chainguard
+      company: {
+        name: 'Chainguard',
+        logo: COMPANY_LOGOS.chainguard
+      },
+      headline: {
+        title: 'Researcher',
+        start: {year: 2024}
+      }
     },
     {
-      size: 'md',
-      position: 'Graduate Research Assistant',
-      company: 'University of Hawai\'i',
-      startYear: '2024',
-      logo: COMPANY_LOGOS.uhManoa
+      company: {
+        name: 'University of Hawai\'i',
+        logo: COMPANY_LOGOS.uhManoa
+      },
+      headline: {
+        title: 'Graduate Research Assistant',
+        start: {year: 2024}
+      }
     },
     {
-      size: 'md',
-      position: 'Technical Operations Intern',
-      company: 'Vanguard',
-      startYear: '2023',
-      endYear: '2023',
-      logo: COMPANY_LOGOS.vanguard
+      company: {
+        name: 'Vanguard',
+        logo: COMPANY_LOGOS.vanguard
+      },
+      headline: {
+        title: 'Technical Operations Intern',
+        start: {year: 2023},
+        end: {year: 2023}
+      }
     },
     {
-      size: 'md',
-      position: 'Software Security Engineer',
-      company: 'Global Cybersecurity Inst.',
-      startYear: '2022',
-      endYear: '2024',
-      logo: COMPANY_LOGOS.ritGci,
+      company: {
+        name: 'Global Cybersecurity Inst.',
+        logo: COMPANY_LOGOS.ritGci
+      },
+      headline: {
+        title: 'Software Security Engineer',
+        start: {year: 2022},
+        end: {year: 2024}
+      }
     }
   ]
+  // projects in order
+  protected readonly projects: Project[] = []
 
   // animate row loads in
   constructor() {
@@ -97,14 +115,4 @@ export class HomeComponent {
       this.destroyRef.onDestroy(() => observer.disconnect());
     });
   }
-}
-
-
-interface Experience {
-  size: 'sm' | 'md';
-  position: string;
-  company: string;
-  startYear: string;
-  endYear?: string;
-  logo: ImageItem;
 }

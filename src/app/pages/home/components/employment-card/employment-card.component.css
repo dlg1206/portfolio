@@ -52,11 +52,3 @@
 
   font-size: 1.15em;
 }
-
-:host(.sm) .text-container .position {
-  font-size: 1.5em;
-}
-
-/*div, p {*/
-/*  border: 1px solid var(--orange-accent);*/
-/*}*/

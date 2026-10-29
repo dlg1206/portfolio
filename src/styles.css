@@ -51,46 +51,6 @@ Cross axis →  left → right
   flex-direction: column;
 }
 
-/*children in flex box are ordered from left to right*/
-.justify-start {
-  justify-content: flex-start;
-}
-
-/*children are centered on MAIN  axis (horizontal for row, vertical for column)*/
-.justify-center {
-  justify-content: center;
-}
-
-/*children in flex box are ordered from right to left*/
-.justify-end {
-  justify-content: flex-end;
-}
-
-/*children are aligned CROSS (perpendicular to main) axis (vertical for row, horizontal for column)*/
-.align-center {
-  align-items: center
-}
-
-/*
-Spacing
-*/
-
-.m-0 {
-  margin: 0;
-}
-
-.mb-1 {
-  margin-bottom: 1rem;
-}
-
-.mb-3 {
-  margin-bottom: 3rem;
-}
-
-
-.mb-5 {
-  margin-bottom: 5rem;
-}
 
 .page-content-container {
   padding: 3rem 5rem 3rem; /*left and right spacing*/
@@ -101,8 +61,6 @@ Spacing
 }
 
 .content-row {
-  display: flex;
-  flex-direction: row;
   margin-bottom: 3.125rem;
 }
 
@@ -117,19 +75,6 @@ Text formatting
 
 .no-break {
   white-space: nowrap;
-}
-
-.text-md {
-  font-size: 1.5rem;
-}
-
-.center-text {
-  text-align: center;
-}
-
-.justify-text {
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 /*
