@@ -1,28 +1,32 @@
 .simple-btn {
+  display: inline-block;
+  border-radius: 0.625rem;
   background-color: var(--orange-accent);
-  border: none;
-  outline: none;
   color: black;
+  text-decoration: none;
+  font-size: 1.125em;
   cursor: pointer;
-
   transition: background-color 0.2s ease;
-  transition-delay: 0s;
 }
 
 .simple-btn:hover {
   background-color: var(--beige-secondary);
-  transition-delay: 150ms;
+  transition-delay: 100ms;
 }
 
+.simple-btn:focus-visible {
+  outline: 2px solid var(--beige-secondary);
+  outline-offset: 2px;
+}
+
+.pad-sm {
+  padding: 0.15em 0.75em;
+}
 
 .pad-md {
   padding: 0.25em 1em;
-  border-radius: 13px;
-  font-size: 1.125em;
 }
 
 .pad-lg {
   padding: 0.6em 1em;
-  border-radius: 10px;
-  font-size: 1.125em;
 }

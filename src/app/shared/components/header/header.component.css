@@ -37,11 +37,6 @@ Menu bar styling
   list-style: none;
 }
 
-.menu-item,
-.resume-btn {
-  font-size: 1.125em;
-}
-
 .menu-item {
   color: white;
   text-decoration: none;
