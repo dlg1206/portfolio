@@ -13,7 +13,7 @@
           problems. I love working with new technologies to find innovative solutions to address the ever present
           challenges with create a more secure software supply chain.
         </p>
-        <app-simple-button [content]="'Learn More'" [routerLink]="'/about'" class="resume-btn"></app-simple-button>
+        <app-simple-button [content]="'Learn More'" [routerLink]="'/about'" [padding]="'lg'"></app-simple-button>
       </div>
 
       <img
@@ -36,20 +36,29 @@
       <app-section-title [title]="'Experience'"></app-section-title>
       <div class="flex-row" style="justify-content: space-between;">
         <!--TODO - links to experience pages?-->
-        @for (exp of experiences; track exp; let i = $index) {
+        @for (e of experiences; track e; let i = $index) {
           <app-employment-card
             class="employment-card reveal-item"
             [style.--i]="i"
-            [data]="exp">
+            [data]="e">
           </app-employment-card>
         }
       </div>
     </div>
 
     <!--Featured Projects-->
-    <div #featuredProjectsRow class="">
+    <div #featuredProjectsRow class="content-row hidden">
       <app-section-title [title]="'Featured Projects'"></app-section-title>
-      <app-project-card/>
+      <div class="flex-row" style="gap: 3.438rem">
+        @for (p of projects; track p; let i = $index) {
+          <app-project-card
+            class="reveal-item"
+            [style.--i]="i"
+            [data]="p.project"
+            [href]="p.article">
+          </app-project-card>
+        }
+      </div>
     </div>
 
   </div>

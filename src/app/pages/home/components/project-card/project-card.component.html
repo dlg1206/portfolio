@@ -1,0 +1,19 @@
+<div class="project-card">
+  <div class="banner-container">
+    @if (!failed()) {
+      <img [ngSrc]="src()" [alt]="alt()" width="1200" height="600" (error)="failed.set(true)"/>
+    } @else {
+      <img [ngSrc]="'/img/fallback-project-banner.png'" [alt]="'Default project banner'" width="1200" height="630"/>
+    }
+  </div>
+  <div class="content-container">
+    <div class="flex-row" style="gap: 0.5rem; flex-wrap: wrap;">
+      @for (k of sortedKeywords(); track k) {
+        <app-keyword-chip [content]="k"/>
+      }
+    </div>
+    <p>{{ data().abstract }}</p>
+    <app-simple-button [content]="'Learn More'" [routerLink]="href()" [padding]="'lg'"
+                       style="align-self: flex-end; margin-top: auto"></app-simple-button>
+  </div>
+</div>
