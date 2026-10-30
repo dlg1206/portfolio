@@ -1,0 +1,15 @@
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1.25rem;
+  border: 2px solid var(--hawaiian-accent);
+  background-color: transparent;
+}
+
+p {
+  font-size: 0.875em;
+  margin: 0 1rem 0;
+  white-space: nowrap;
+}
