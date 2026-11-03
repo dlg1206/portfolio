@@ -11,7 +11,7 @@ export const SOCIAL_ICONS = {
   googleScholar: {
     icon: 'fa-brands fa-google-scholar',
     alt: 'Google Scholar',
-    href: 'https://scholar.google.com/citations?user=_drXjQ4AAAAJ'
+    href: 'https://scholar.google.com/citations?user=L58Z1BUAAAAJ'
   },
   email: {icon: 'pi pi-envelope', href: 'mailto:dgarcia2@hawaii.edu', alt: 'Email'},
   calculator: {icon: 'pi pi-calculator', alt: 'Cemetech', href: 'https://www.cemetech.net/users/TI_84_Coder'}
