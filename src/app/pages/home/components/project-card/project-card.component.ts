@@ -15,7 +15,7 @@ import {GitHubProject} from '../../../../shared/models/github-project';
   styleUrl: './project-card.component.css',
 })
 export class ProjectCardComponent {
-  data = input.required<GitHubProject>();
+  project = input.required<GitHubProject>();
   href = input.required<string>();
   version = input('1'); // bump to bust cache
 
@@ -23,15 +23,15 @@ export class ProjectCardComponent {
 
   // fetch the preview from github
   protected src = computed(() => {
-    const {owner, repo} = this.data();
+    const {owner, repo} = this.project();
     return `https://opengraph.githubassets.com/${this.version()}/${owner}/${repo}`;
   });
 
-  protected alt = computed(() => `${this.data().repo} banner`);
+  protected alt = computed(() => `${this.project().repo} banner`);
 
   // sort keywords by length
   protected sortedKeywords = computed(() =>
-    [...this.data().keywords].sort((a, b) => a.length - b.length || a.localeCompare(b))
+    [...this.project().keywords].sort((a, b) => a.length - b.length || a.localeCompare(b))
   );
 }
 

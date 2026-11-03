@@ -6,10 +6,11 @@ import {SimpleButtonComponent} from '../../shared/components/simple-button/simpl
 import {SectionTitleComponent} from '../../shared/components/section-title/section-title.component';
 import {SoftwareCarouselComponent} from './components/software-carousel/software-carousel.component';
 import {EmploymentCardComponent} from './components/employment-card/employment-card.component';
-import {COMPANY_LOGOS} from '../../shared/data';
-import {EmploymentSummary} from '../../shared/models/employment';
+import {EmploymentSummary, toSummary} from '../../shared/models/employment';
 import {ProjectCardComponent} from './components/project-card/project-card.component';
 import {GitHubProject} from '../../shared/models/github-project';
+import {PublicationCardComponent} from './components/publication-card/publication-card.component';
+import {POSITIONS} from '../../shared/data/employments';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,8 @@ import {GitHubProject} from '../../shared/models/github-project';
     SectionTitleComponent,
     SoftwareCarouselComponent,
     EmploymentCardComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    PublicationCardComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -42,51 +44,13 @@ export class HomeComponent {
       alt: "Derek Garcia smiling past the camera while buttoning up his suit jacket",
     }
   } satisfies Record<string, ImageItem>;
+
   // logos in card order
-  // todo - move to shared data folder?
   protected readonly experiences: EmploymentSummary[] = [
-    {
-      company: {
-        name: 'Chainguard',
-        logo: COMPANY_LOGOS.chainguard
-      },
-      headline: {
-        title: 'Researcher',
-        start: {year: 2024}
-      }
-    },
-    {
-      company: {
-        name: 'University of Hawai\'i',
-        logo: COMPANY_LOGOS.uhManoa
-      },
-      headline: {
-        title: 'Graduate Research Assistant',
-        start: {year: 2024}
-      }
-    },
-    {
-      company: {
-        name: 'Vanguard',
-        logo: COMPANY_LOGOS.vanguard
-      },
-      headline: {
-        title: 'Technical Operations Intern',
-        start: {year: 2023},
-        end: {year: 2023}
-      }
-    },
-    {
-      company: {
-        name: 'Global Cybersecurity Inst.',
-        logo: COMPANY_LOGOS.ritGci
-      },
-      headline: {
-        title: 'Software Security Engineer',
-        start: {year: 2022},
-        end: {year: 2024}
-      }
-    }
+    toSummary(POSITIONS.chainguard),
+    toSummary(POSITIONS.uhManoa),
+    toSummary(POSITIONS.vanguard),
+    toSummary(POSITIONS.ritGci)
   ]
   // projects in order
   protected readonly projects: ProjectItem[] = [
