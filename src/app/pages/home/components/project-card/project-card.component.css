@@ -1,4 +1,4 @@
-.project-card {
+.card {
   display: flex;
   flex-direction: column;
   width: 24.375rem;
@@ -7,8 +7,10 @@
   background: var(--navy-secondary);
   border-radius: 1.2rem;
   box-shadow: 0 0.625rem 1rem rgb(0 0 0 / 0.3);
+  cursor: default;
 }
 
+/* Header */
 .banner-container {
   flex: 0 0 12.25rem;
 }
@@ -20,19 +22,46 @@
   object-fit: cover;
 }
 
+/* Body */
 .content-container {
   display: flex;
-  flex-direction: column;
   flex: 1;
-  min-height: 0;
+  flex-direction: column;
   gap: 0.75rem;
+  min-height: 0;
   padding: 1rem 1.25rem 1.1rem;
 }
 
-.content-container p {
+.keywords {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.keywords > * {
+  flex-shrink: 0;
+}
+
+.abstract {
+  flex: 1 1 0;
+  min-height: 0;
   margin: 0;
   overflow: hidden;
-  line-height: 1.563;
+  line-height: 1.5rem;
   text-align: justify;
   hyphens: auto;
+
+  /* Clamp to 10 lines; tune to card height */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  line-clamp: 10;
+}
+
+.learn-more {
+  display: block;
+  flex-shrink: 0;
+  align-self: flex-end;
 }

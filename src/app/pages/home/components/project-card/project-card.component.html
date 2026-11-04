@@ -1,4 +1,4 @@
-<div class="project-card">
+<div class="card">
   <div class="banner-container">
     @if (!failed()) {
       <img [ngSrc]="src()" [alt]="alt()" width="1200" height="600" (error)="failed.set(true)"/>
@@ -7,13 +7,13 @@
     }
   </div>
   <div class="content-container">
-    <div class="flex-row" style="gap: 0.5rem; flex-wrap: wrap;">
+    <div class="keywords">
       @for (k of sortedKeywords(); track k) {
         <app-keyword-chip [content]="k"/>
       }
     </div>
-    <p>{{ project().abstract }}</p>
+    <p class="abstract">{{ project().abstract }}</p>
     <app-simple-button [content]="'Learn More'" [routerLink]="href()" [padding]="'lg'"
-                       style="align-self: flex-end; margin-top: auto"></app-simple-button>
+                       class="learn-more"></app-simple-button>
   </div>
 </div>

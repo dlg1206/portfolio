@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="title-container">
+    <h3>{{ publication().title }}</h3>
+
+    <div class="author-row" #row>
+      @for (a of authors().slice(0, count()); track $index; let i = $index) {
+        <span>
+          <span [class.bold]="i === boldIndex()">{{ shortName(a) }}</span>@if (i < count() - 1 || truncated()) {,
+        }
+        </span>
+      }
+      @if (truncated()) {
+        <span>et al.</span>
+      }
+    </div>
+
+    <!-- invisible measurer -->
+    <div class="measure" #measure aria-hidden="true">
+      @for (a of authors(); track $index; let i = $index; let last = $last) {
+        <span>
+          <span [class.bold]="i === boldIndex()">{{ shortName(a) }}</span>@if (i < count() - 1 || truncated()) {,
+        }
+        </span>
+      }
+      <span>et al.</span>
+    </div>
+
+  </div>
+
+  <div class="content-container">
+    <div class="keywords">
+      @for (k of sortedKeywords(); track k) {
+        <app-keyword-chip [content]="k"/>
+      }
+    </div>
+
+    <p class="abstract">{{ publication().abstract }}</p>
+
+    <app-simple-button [content]="'Learn More'" [href]="publication().href" [newTab]="true" [padding]="'lg'"
+                       class=learn-more></app-simple-button>
+  </div>
+</div>

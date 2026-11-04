@@ -61,5 +61,18 @@
       </div>
     </div>
 
+    <!--Featured Publications-->
+    <div #featuredPublicationsRow class="content-row hidden">
+      <app-section-title [title]="'Featured Publications'"></app-section-title>
+      <div class="flex-row" style="gap: 3.438rem">
+        @for (p of publications; track p; let i = $index) {
+          <app-publication-card
+            class="reveal-item"
+            [style.--i]="i"
+            [publication]="p">
+          </app-publication-card>
+        }
+      </div>
+    </div>
   </div>
 </div>

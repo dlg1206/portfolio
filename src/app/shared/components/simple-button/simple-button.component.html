@@ -1,6 +1,21 @@
-<a
-  class="simple-btn"
-  [class]="'pad-' + padding()"
-  [routerLink]="routerLink()">
-  {{ content() }}
-</a>
+@if (href(); as url) {
+  <a
+    class="simple-btn"
+    [href]="url"
+    [attr.target]="target()"
+    [attr.rel]="rel()"
+    [class]="'pad-' + padding()"
+  >
+    {{ content() }}
+  </a>
+} @else {
+  <a
+    class="simple-btn"
+    [routerLink]="routerLink()"
+    [attr.target]="target()"
+    [attr.rel]="rel()"
+    [class]="'pad-' + padding()"
+  >
+    {{ content() }}
+  </a>
+}
