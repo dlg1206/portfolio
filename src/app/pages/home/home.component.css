@@ -12,6 +12,50 @@
   line-height: 2.5rem;
 }
 
+.cta-row {
+  display: flex;
+  flex-direction: row;
+  gap: 11rem;
+  justify-content: center;
+  padding: 5rem 0 5rem;
+}
+
+.cta {
+  border-bottom: 0.25rem solid var(--orange-accent);
+  border-left: 0.25rem solid var(--orange-accent);
+  padding: 1.25rem;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.cta-icon {
+  background: var(--navy-secondary);
+  border-radius: 0.938rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.313rem;
+  height: 5.313rem;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 0.625rem 1rem rgb(0 0 0 / 0.3);
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-icon i {
+  display: block;
+  font-size: 3.75rem;
+  line-height: 1;
+  width: 1em; /* glyph box is exactly font-size wide */
+  height: 1em;
+  text-align: center;
+}
+
 
 /*Row fade in animation*/
 .hidden {
@@ -26,12 +70,12 @@
 }
 
 /*Hover animation*/
-.employment-card {
+.hover-animation {
   transition-delay: 1.5s;
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
-.employment-card:hover {
+.hover-animation:hover {
   transform: translateY(-10px) scale(1);
 }
 

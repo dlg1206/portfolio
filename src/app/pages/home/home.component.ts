@@ -13,6 +13,7 @@ import {PublicationCardComponent} from './components/publication-card/publicatio
 import {POSITIONS} from '../../shared/data/employments';
 import {Publication} from '../../shared/models/publication';
 import {PUBLICATIONS} from '../../shared/data/publications';
+import {SOCIAL_ICONS} from '../../shared/data/icons';
 
 @Component({
   selector: 'app-home',
@@ -37,6 +38,7 @@ export class HomeComponent {
   private readonly experienceRow = viewChild.required<ElementRef<HTMLElement>>('experienceRow');
   private readonly featuredProjectsRow = viewChild.required<ElementRef<HTMLElement>>('featuredProjectsRow');
   private readonly featuredPublicationsRow = viewChild.required<ElementRef<HTMLElement>>('featuredPublicationsRow');
+  private readonly callToActionRow = viewChild.required<ElementRef<HTMLElement>>('callToActionRow');
 
 
   private readonly destroyRef = inject(DestroyRef);
@@ -91,6 +93,12 @@ export class HomeComponent {
     PUBLICATIONS.sbom,
     PUBLICATIONS.ossSurvey
   ]
+  // cta
+  protected readonly ctaIcons = [
+    SOCIAL_ICONS.github,
+    SOCIAL_ICONS.linkedin,
+    SOCIAL_ICONS.email,
+  ] as const;
 
   // animate row loads in
   constructor() {
@@ -113,6 +121,7 @@ export class HomeComponent {
       observer.observe(this.experienceRow().nativeElement);
       observer.observe(this.featuredProjectsRow().nativeElement);
       observer.observe(this.featuredPublicationsRow().nativeElement);
+      observer.observe(this.callToActionRow().nativeElement);
 
       // clean up if the component is destroyed before both elements appear
       this.destroyRef.onDestroy(() => observer.disconnect());
